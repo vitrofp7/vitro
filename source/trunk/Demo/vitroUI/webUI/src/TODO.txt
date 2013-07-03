@@ -1,0 +1,424 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2013 VITRO FP7 Consortium.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/lgpl-3.0.html
+# 
+# Contributors:
+#     Antoniou Thanasis
+#     Paolo Medagliani
+#     D. Davide Lamanna
+#     Panos Trakadas
+#     Andrea Kropp
+#     Kiriakos Georgouleas
+#     Panagiotis Karkazis
+#     David Ferrer Figueroa
+#     Francesco Ficarola
+#     Stefano Puglia
+#-------------------------------------------------------------------------------
+UI revision: r605 (for review + improvement of alerts print for monitor and alerts.jsp)
+GW revision: r571 (included in r605)
+
+
+[][CODE][UI][GOOGLEMAPS] "new service" and "monitor service": Remove Geocoding (or disable it) from maps. It's not really needed and it adds to delays...
+[][UI] Show selections on map. (+ alert list as optional alternative/debug but without the split string showing)
+		a. clean map selection
+		b. clean region selection and polylines etc
+		c. add "shown" to selected markers
+		d. keep old alert with the list of shown nodes as a separate link button (debug show). Don't show the split string)
+		e. Scroll to DIV of map
+[][UI][MAPS] maybe have VGWs on the left to sort by/filter by them too.
+[][UI][3D][KMLs] bring back KML 3d. Support new KML Google API!
+[][DB][CLEANUP][SCRIPT] Script to delete DB old data (done, perhaps need updating): Observations/Notifications/Equiv lists/Capabilities/Partial Services/Node Selections... what else?
+[][DB][TASK][MAINTENANCE] Backup DB
+[][DB][DIAGRAM] Update E-R Diagram
+[][NEWSERVICE][UI] Ajax submit for newservice.jsp (now reloads the page)
+[][NEWSERVICE][UI] Auto-insert to composite if only one function ???
+[][UI][NEW SERVICE]: Ajax to submit, more validation of fields, Refresh Map Button?
+[][UI][NEW SERVICE]: Ajax fill in & update/refresh of map
+[][!!!][UI][CODE][DB} Make VSNs shared, or belonging to a specific user (isolation of services!). All VSP user VSNs are shared! For other users, you can select to "share" (be public) or be private. Add checkbox!
+[][UI][VSP][CODE] Allow personalization of deployed VSNs? (how would that work? or would redeploying a new VSn possibly importing an existing one, cover this? : in both cases we would need to have TWO VSNs running...
+[][UI] Icon-button for "Refresh synch" status.
+[][UI][CODE][VSP] Region selection in definition for composed services. (It's another wildcard, and user-friendly) (allows to define a region of interest, and let the VSP resolve the nodes and VGWs involved!)
+[][TEST][VSP][MONITOR][DB] Test with multiple services having the same capability (like the meteo service in the demo) or the same capability and the same node set! (they should be merged by the VSP query processor!)
+[][UI][VSP] Show alerts about status ("IMPOSSIBLE, PARTIAL, CONTINUATION, PARTIAL+CONTINUATION"). WHY UNKNOWN STATUS???
+	DEBUG UNKNOWN STATUS (if the VGW sends still such notification because it should not)!!!
+		[][UI] Show alert/notification about Service Deployability -> GW level, and VSN level. Also the VSP has to notify itself when NO resources support a requested VSN and no Queries whatsoever are sent.
+		[][UI][VSP][CODE] Need an info when a service is entirely impossible and VSP NEVER sends a message to query in the first place!
+[][UI] Need a way to filter out levels of notification from the ui
+[][UI] Ignore measurements with timestamp 0
+[][UI][MONITOR] LOOSEN AUTO-POLLING for Data/Alerts. Also check code, make "lighter" requests for data with each poll.
+		Bring latest n (eg 300) instead of all. Bring latest at most 300 on top of the last retrieved list (to not bring the same again)
+		Make it an option/argument to bring all (eg if n = -1).
+		Better ordering of alarms (use OR clause and an arraylist parameter, to get all the capabilitiesIDs, partialServicesIDs and Types). Support paging (parameter of how many to bring back, -1 for all)
+		Get the alerts sorted by date from the DAO, by issuing the capabiity and partial service filters in a arraylist parameter and using an OR in the query!
+[][UI] Map refresh button to all maps! Add a refresh button for maps - use ajax in monitor.jsp and newservice.jsp pages!
+[][UI][CLEANUP] Remove prototype js library. Go with jquery everywhere
+[][UI][MONITOR] Keep zoom level and pan position for dy-graph control while refreshing its data!
+[][UI][MONITOR] Deal with aggregates and rest of the functions (other than last value) in the monitor.jsp page.
+[][UI] Restore filter by "requested" capability in monitor.jsp on the left. Add a possible filter by VGW. Fix selection coloring bug.
+[][UI] Monitor.jsp. Have the selected node be "Marked as selected"
+[][UI] New center for Thales::  48.941324,2.306992 (we might need another KML too to fit the new location)
+[][UI] View details for VSNs (Without oldDebugScreen)
+[][UI] Restore a way to re-access Google Earth results ui
+[][UI][NON-MODAL][DONE?] (noty library?) jquery div popup (non-modal) for alert info!
+[][UI][MODAL][POPUP] Restore confirmation popup for certain actions (eg. delete service/disable gateway)!
+[][UI][MAP] Map selection add an option to zoom in a WSI (per gateway) or a map search and zoom to a city!
+[][UI][MAP] Set map to full screen view (and restore back)
+
+[][OPENSOURCE-RELEASE] Check icons for license issues. If there are any, use custom placeholder icons instead.
+[][REVIEW][FEEDBACK][SERVICE CREATION] Search/filter out box to select nodes for services (friendlier/scalable)
+[][REVIEW][FEEDBACK][SERVICE CREATION][MONITOR] Show nodes with their position on building layouts
+[][CODE][SMART][VGW] Autodetect failed nodes and disable them (needs testing of the one-way notification mechanism from VGW to VSP). Ping for alive status? register/keep track of nodes non-responding to requests repeatedly?
+[][CODE][SMART][VGW][VSP] Autodetect invalid values at VGW level(?) or only at VSP level (?). Take into consideration the UOMs when available/reported for a sensor.
+[][UI][ACCESS CONTROL][SCREENS] Simple user screens should differ from VSN user's.
+[][CODE][DB] Unify DB access! (Use hibernate and DAO for everything)
+		- Unify HIBERNATE and DB-COMMONS! Gateway access seems wonky and it could be because of this.
+		- UNIFY Access to DB. Don't allow the direct sql queries to DBRegistered gateways. Use Hibernate always!
+[][CODE][CRASH] Resolve the dummy (see log on app init) crashes with the connection pool module (3cp0 ?)
+[][CODE][CRASH] Resolve the apache crashes for session expiration (shiro)
+[][CODE][SESSIONS] Set the session expiration!( can we go for unlimited?)
+[][CODE][XML][PARSING] Improve XML parsing at VSP level!
+[][TESTING] Write test suites/cases to debug the code quickly! JUnit testing
+[][VSP] Decide *overall* status of execution/deployability (at VSN level)? (If the VSN is impossible for one VGW, it should not mean impossible for all service, because it may include other VGWs with support it)
+[][UI] Show proper enable/disable button and status of node
+	///Update on the fly the status of a node? or with a small button of refresh?/another for re-synch?
+[][VSP][CODE][DB} Check measurement storing. Are there duplicates and redundant entries (0 timestamps, 0 aggr nodes)??
+[][VSP][CODE][DB] check if the levels (VGW level, VSP level) set for notifications "impossible" or "all triggers met" are correct.
+				Also check why some notifications have a NULL column (which one was it?)
+[][UI] Enable Disable Button should be available according to current node's status
+[][UI] Enable/Disable status set without pressing the "View resources" button (now done with the refresh map button -is this enough?)
+[][VSP][CODE] Handle update from VGW when less nodes "arrive" back than originally (what happens to the rest? are they expunged?)
+			- If less(subset) devices are advertised, VSP maintains the old ones too(? to verify)
+[][UI][VSP][MONITOR] Show history/data even for offline services!
+[][UI][MONITOR] Show the "continuation of service" on dy-graph somehow? (other color, another line?)
+[][UI][VSP] Cleanup of UI -> VGW registration screen improvement?
+[][VSP][CODE] VSP Processor fix -> more compact queries (would possibly need more work in the reconstruction form the replies/correspondance to measurements and alerts)
+[][VSP][UI][CODE] Purge ActiveMQ topic Pipes -> expose a button for this in the UI. Purge all ACTIVEMQ communications (per channel or all)
+[][VSP][VGW][CODE] VSN queries, send the period field to the VGW (to be handled by its task manager if required)!
+[][BUG][FIXED?][TOCHECK] A WLAB service had no gateway (maybe it was submitted from an un-authed user (this was back when the newservice.jsp was accessible to unauthed users)
+					or due to hibernate mysql disconnections. Now we use C3p0 connection pool manager.
+[][UI][CODE][CONSIDER] MESSAGE AT VSP 'Node Id xxx Replaced by xxx" (Notification?)
+[][UI] Make links into link buttons/images with tool tips. For more user friendliness.
+[][UI] Add link button for synch on-demand for equiv lists and enabled/disabled nodes status
+[][UI][CODE][VALIDATION] Act upon equiv list -> Alert for duplicates (don't allow them/javascript+ajax checks), alert for less than two nodes (server side check)
+[][CONSIDER][VSP] Should a query be stopped if deemed impossible?
+[][UI][CONSIDER] Add a "google" type search on top of the map, to bring results in matching node (for friendlier node selection in service creation)
+[][!!!][RELEASE][REDISTRIBUTE] Standalone VGW, redistributable, command line and config.txt configured.
+[][!!!][RELEASE][REDISTRIBUTE] Standalone VSP redistributable, config.txt configured.
+[][CRASH][DEBUG][FIXED?][TOCHECK] Code debug hibernate crashes at VSP
+========================================================================================
+2ndary
+========================================================================================
+[][UI][CODE] Add icons for mobile nodes, and support for a "query"-less capability "mobility", so as to show a node as mobile (particularly useful for DTN demonstration)
+[][VSP][CODE][CONSIDER] What impact does setting the timeout at VSP level for queries have? Can we have it more configurable/exposed to the UI or a settings file?
+[][UI][NEW SERVICE][FEEDBACK][PARTIALLY DONE][TO CHECK] (Firefox 19.0)
+            - Create and deploy button, half of it appears out of the main frame.
+            - The surface value isn t right sometimes, too big. Could it be possible to show this measure only in one unit (m2 or km2) depending on what suits it better? If the surface is very big the value in m2 makes no sense, and when is small the same happens to km2.
+[][UI][FEEDBACK][REGISTER NEW ISLAND] Advanced settings > Register New Island: The fields for writing the names are very narrow and it cannot be read properly what is being written.
+[][UI][FEEDBACK][TOCHECK] Check ie9/10 compatibility
+[][UI][FEEDBACK][MAP CONTROL] Include a legend for the distance in the map?
+[][UI][FEEDBACK] In cases where an exception occurs, think of using the bootstrap-alert.js.
+[][UI][FEEDBACK] Can information text "Right click on nodes to explicitly...", like the one present on the right hand side of the "Service settings" page be displayed as a static popover (bootstrap-popover.js)?
+[][POSSIBLE][BUG][TEST] Possible bug Define a service while a VGW is offline (but has registered resources in the past. Then can then service be deployed/deleted? Is the VSP stuck /hangs?
+[][CONSIDER][CODE][VSP][VGW] A VSP could ping the VGW before sending a query. If the ping times out, then don't send the query!?!!
+[][UI] Improve interface functions if needed! (alarms and monitoring views, according to fixes and call improvements (eg. checking against request parameters) made for the advanced "Gateways Edit" view.
+[][UI][ICONS] The messages: (synched)(deleted awaiting synch) (view) should have icons.
+[][UI] EDIT GATEWAYS view: Disabling/Enabling a Gateway should not required page refresh! Also where is this considered (other than in the same page?) Running/Deployed VSNs do NOT consider this now.
+[][VSP][CODE][UI] Calculate aggregates overall?(VSP level)
+            - support for webapp level aggregation (AVG across gateways). (How will these show up in the observations? All sensors would appear (in the monitoring) to have this (result) value or just a special a single type of sensor?
+[][UI][VIEWS] DEPLOY SERVICE view (For Simple User, one-click). MANAGE SERVICE view (For more Advanced?/Operator?/Admin?)? No because the one is for simple user, the other for advanced/operator ...
+[][ACCESS CONTROL][ROLES] Different User Roles? --> Should have different viwes or even different options/access to features in same views.
+[][UI][SESSIONS] Check in all Ajax and classes if the user has been auto-logged out(session has ended), in order to not proceed (or redirect to logout page.... ESPECIALLY AJAX SCRIPTS/BACKENDS which are hidden.
+[][CODE][CLEANUP] Remove the dummy debug messages/ Keep the imporant ones.
+[][VSP][CODE][CONSIDER] Should request status update first purge and then request?
+[][CODE][VSP][VGW] integer.parseInt() need all try catch for format exceptions!
+[][VSP][CONSIDER][CODE] Do QUERIES AND COMMAND REQUESTS need a timestamp too? (for the scheduler to ignore? but are the times in the two machines synched?)
+[][VSP][DB][CONSIDER][CODE][OPTIMIZE] Should the removal of a service do anything more deep (remove partial services too)? In theory no.
+[][UI][MONITOR][NEW SERVICE][ALERTS] whenever AJAX is used we should verify that the results correspond to the right (selected service/vgw/sensor etc)!! like in manage VGWs page!
+[][VSP][CODE] We need more extended functionality for "disabling a gateway" (eg. a disabled gateway should not be able to participate in VSNs anymore, running or new ones, until re-enabled!)
+[][UI] Ideally disable the  "ADD TO EQUIV LIST" button until AJAX returns!
+[][CODE][VGW][VSP] Errors (printStackTrace) and System.outs should be redirected to the/a logger!!!
+[][UI] Dummy Default location of map should be kept somewhere centrally in the code (to easy change)
+[][UI][MONITOR][FIXED?] monitor page, what if temperature is NOT among the deployed capabilities for aervice ? Why show it always as default?
+[][UI] manage gws. Enable disable of gawatey should auto-update (ajax) the field instead of prompting for re-load!-
+[][UI][VSP][CODE][VGW] For "manage gateways" View, support messages _Suports DTN and Supports_Trust_Routing (queries and responses from VGW) (and show the results as icons for the gateway)
+[][MANUAL][HELP] Installation instructions. Setting up in IDE, and on new clean PC. Prerequisites etc
+[][VSP][CONFIG] use a config.properties files to set db credentials, ports and etc.
+[][VSP][CODE][UI] When a Gateway has not yet sent resources, but there is a VSN defined including it, then results will always be:
+    "No results found!"
+    and KML link will respond with an error:
+    "11ErrorNo matching model files were found!"
+[][!!!][CHECK][DONE?] merge with singleton threaded process to retrieve initial resources (work from the irrigation app)!
+[][!!!][CHECK][DONE?][VSP][CODE][LOG4j] issues resolve!  Use log4j logger instead of System.out. Make the applet read from log4j.properties file. Edit log4j.properties (optimize)
+[][!!!][VSP][CODE}[CHECK][DONE?] DBCommons and DBRegisteredGateway classes should probably be moved permanently to the engine backend
+[][!!!][CHECK][VSP][CODE] grab the websecuritymanager from the webenvironment (from the servlet context) in the Commons class (instead of getting a new object)
+[][!!!][TEST][UI] test session variables, remove test code from commons class
+[][!!!}[UI] login, upon error should display some error (div) to the user!
+[][!!!][VSP][CODE][ACTIVEMQ][CHECK] merge consumer and producer for SOS Registration Messages!
+[][CODE][UI][DB][PARTIALLY DONE] timestamp for measurements should be reconsidered, or offer the option to switch to "timestamp_received" instead of "timestamp_created"
+[][CODE][TOCHECK][OPTIMIZE] ensure unique id for partial aggregate queries (for the same definition, since we issue multiple times)!!!!
+[][CODE][CLEANUP] check uses of equals, equalsIgnoreCase vs compareTo, compareToignoreCase for strings!!!
+[][!!!][CODE][CLEANUP][OPTIMIZE] UserNode has some INTERFACE functions that should be implemented (to simplify the interface) !
+[][!!!][DB][CODE][PARTIALLY DONE] Implement some filters for the SQL / DAO queries (to not retrieve entire tables, and then filter out with loops).
+[][!!!][CODE][VSP][TOCHECK] queryResultFile does not show fid! (still works, but why is it not set/stored? Probably VGW side issue)
+[][UI][MAP] Map selection. Info about region bubble
+[][VSP][LOG WARNING][TO FIX?] {main} HHH000427: Using deprecated org.hibernate.transaction.TransactionManagerLookup strategy
+          [hibernate.transaction.manager_lookup_class], use newer org.hibernate.service.jta.platform.spi.JtaPlatform strategy instead [hibernate.transaction.jta.platform]
+[][VSP][SMART][OPTIMIZE][VGW UPDATES] Implement a way for gateway updates to be considered stale and auto-request updates. Also do not merge but remove old resource info and replace with new.
+[][VSP][DB][CONSIDER] Do we need observations to have a FK connection to gateways ? (we could if we allowed only disabling gateways not permanent deletion
+[][VSP][DB][CONSIDER] Similarly, do we need query definitions (Capabilities) having FKs to Reg Gateways.
+[][CONSIDER][CLEANUP][DB][CODE] purge all objects when deleting a composed service? Do we need to keep the partial services? Partial Services could be re-used, but we still need a way to delete them if they are not use-able and don't have associated results/alerts (or force deletion in that case)
+[][CODE][CLEANUP][UI][MAP][PARTIALLY DONE] Isolate code for map to be easily integrated for service creation and monitoring
+[][CODE][BUGFIX] zero measurements are added when a service is deployed for all capabilities and sensors! (probably related to the time-out placeholder)
+[][VSP][DEBUG][INFO][VIEW] /roleEndUser/oldDebugScreen  (remove later?)
+[][UI][CONSIDER][CODE] Support for the "frequency" field (or can we omit it from the ui?) per sub-partial service
+[][VSP][ACTIVEMQ] activeMQ shows connection attempts to ports that should not be used (51000 - 54000 or wider range)
+[][VSP][ACTIVEMQ] use activeMQ to re-route web service notifications (?) to the main app
+[][VSP][CODE][UNICA API integration] DCA smartnodes have a prefix of the VGW name and a dot (.) before their urn. This should be handled (removed and re-attached) where appropriate.
+[][VSP][CODE][UNICA API integration]  Handle of explicit update requests from DCA, node updates (new capabilities, capabilities removed)/node appearances/disappearances)
+[][VSP][CODE][UNICA API integration] DCA smartnodes retrieval should run ONLY once. Also bring gateways that are also registered by VGW locally!!!! (look simpleQueryDCA)
+[][VSP][CODE][UNICA API integration] get registered resources (from gateways)
+[][VSP][CODE][UNICA API integration] send a command (1. to get updated resources, to see if gateway is online)
+[][VSP][CODE][UNICA API integration] send a command (2. to subscribe to resources, to receive observations)
+[][VSP][CSHIRO][CHECK] shiro provides some warnings in its log about cache !
+[][VSP][RESIN] resin_os.dll issue when deploying from internal resin framework in IntelliJ (conflict with hibernate when hotswapping classes!)
+[][VSP][INFO][RESIN] to start resin in debug mode you need in resin.properties : jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,address=57451,suspend=n,server=y
+[][VSP][RESIN][HIBERNATE BUG] error (out_of_memory, and bind exception) if trying to deploy web services (vitrows as well) for internal resin
+                - !! [code] (related to resin and Persistence layer of hibernate) There is a SEVERE memory leak that needs to be fixed !!! (otherwise resin runs out of memory and crashes/refuses to run the application)
+                - Web feedback suggests that this could be something inherent in using Hibernate when hot-swapping classes in an application server.
+[][VSP[[CODE][ACTIVEMQ] activeMQ pipes should all migrate to the engine UserNode
+[][VSP[[CODE][ACTIVEMQ][FIXED?] activeMQ creation should not be blocking for starting up the servlet!
+[][VSP][CODE][CLEANUP] use getCommon instead of Common. static methods should be made non-static
+[][INFO][HELP] If behind firewall/NAT make sure you open AND forward the port where your resin or tomcat server operates.
+[][VSP][CONFIG] In main servlet (GatewaysAndQuerysView) we have removed the reading from a config file. It probably needs to be re-introduced (by reading from a custom config file in the resources folder perhaps - evaluate if it is better now that the input stream is removed
+                //             ClassLoader cl = this.getClass().getClassLoader();
+                //             InputStream is = cl.getResourceAsStream("Presentation/WebGUI/VitroAppServlet/Config.txt");
+                //             ConfigDetails.setIstream(is); // we don't use the getConfigDetails() here because it will cause the reading of a default Config.txt (non-existent).
+[][CODE][VSP][ACTIVEMQ]  We need to add new VGW topics if new gateways are registered while the app is running!
+[][FUTURE][VSP][CODE] Support for edit composed service.
+[][FUTURE][BROWSER COMPATIBILITY] Test IExplorer/opera/firefox/Chrome behavior.
+[][FUTURE][VSP][CODE] Change on-the-fly parameters change (while a service is running). Currently only the polling period.
+[][FUTURE][UI][CONTINUATION][MONITOR] polylines do not show well as rays with one or 2 items
+[][FUTURE][UI] Have context help engine (or a manual page) for the various screens and functionalities/possibilities of the VITRO platform from the UI.
+[][FUTURE][VSP][VGW] Two (2) modes for VSN: Polling or 1-shot queries from VSP, 2. Running on VGW's task manager. Has to be remotely pause/restarted/stopped/deleted.
+[][FUTURE][CONSIDER] A continuation option could have been: exchange equiv lists only if option is enabled.
+[][FUTURE][VSP] Parse text tokens and construct a VITRO service (automagically) (Semantic analysis), (topics of interest per user)
+[][FUTURE][VGW][UI][CONSIDER] Utilize supporting resources (Not actually in the Monitoring/Actuating set) (like eg. relays/routing). (... ?)
+					How do we expose those in the UI? (Do we need to?)
+[][FUTURE][VGW][VSP] Respond opportunistically to queries. Don't wait for all sensors to respond to send a compact message to the VSP.
+			Could be an extra mode (specified in the request) or a mode that VGW would switch too, if it's taking too long to gather data from all resources (or some of them do not respond)
+			Could be send a message back per sensor. Or even send back "what you have from a set of sensors so far"!!
+[][FUTURE][VSP[VGW] Zipped messages, optimized size etc.
+[][FUTURE][UI] Lasso/free hand Area selection on map (instead of border markers)
+[][FUTURE][UI][MAP] map selection. Cyclical
+[][FUTURE][UI][MAP] map selection. Rectangular
+[][FUTURE][UI][MAP] map selection. Switch between cyclical, free hand and rectangular
+[][FUTURE][UI][CODE] Better functions and triggers for composed services + Complex conditions (new service)
+[][FUTURE][UI][VSP] Re-introduce KML 3d. Support for 3d models (not KML, but the binary format), support for the Google KML API etc...
+[][FUTURE][UI] How would we show actuating in the monitor page? Or more complex stuff like, "actuate when temp > 6 and light <5 "?
+[][FUTURE][VSP][CODE] Re-use partial services. To Build other services (in newService.jsp), or to re-use their measurements.
+				Or re-use other complete VSNs (composite services?). Re-use partial services results?
+[][FUTURE][VSP] Negotiation with WSIEs (WSI enablers, offering their WSI not for free)
+[][FUTURE][VSP] Negotiation with VITRO platform Clients (end users for paid services?)
+[][FUTURE][VSP] Authorized VSNs (enter credentials to use/edit/deploy/see results) VS free VSNs
+[][FUTURE][UI][VSP][CODE] right click to (de-)activate sensor from VSN!
+[][FUTURE][VSP] Re-introduce user registration
+[][FUTURE][UBERDUST][COAP] CTI better Coap Client. Merge code of Coap clients. Alternative to HTTP connections.
+[][FUTURE][VSP] Handle UOMs, and conversions of values.
+[][FUTURE][VGW][VSP] More compact messages, employ compression too.
+[][FUTURE][VGW][VSP] SUPPORT ASYNCHRONOUS CALLBACK QUERIES (PUBLISH-SUBSCRIBE Sort of) for VGWs (instead of synchronous periodic polling)
+[][FUTURE][VGW][VSP] SUPPORT STRING VALUES or DOUBLE Values from nodes (to reply to requests)
+[][FUTURE][VGW][VSP] SUPPORT NODE-LEVEL functions/Responses (technically it is supported by the XML, but is not processed/hanlded because it was deemed unecessary), where nodes or the vgw respond about eg. the max over their own (the node's) history of values.
+[][FUTURE][VGW][VSP] SUPPORT FOR BINARY DATA/STREAMs back to VGW (eg. camera feeds)
+[][FUTURE][VGW][VSP] get feed streaming from cameras (support camera sensing / actuation (take photo?)?)!
+[][FUTURE][SUPPORT][VIRTUAL][UI][VSP[VGW][CONSIDER] virtual gateways (?) in case some WSI is down. (???)
+[][FUTURE][UI] (the correct] profile page for each role should be accessible via a dropdown under the hello user (role (Like eg. in gmail))! Not in the actions menu!
+[][FUTURE][VSP][LOGIN] remember me checkbox seems to have no effect (it is reset after closing the browser)!
+[][FUTURE][CODE][CONSIDER] Query definition should support an extra flag-field "notifyOnANDofRules" (meaning command the VGW to send an extra notification when ALL the rules are met, is this flag is set).
+[][FUTURE][VSP][CONSIDER] Do we need an asynch listener at the VSPCoreNode?
+[][FUTURE][DTN][ON DEMAND] About DTN on demand mode:
+----------------------------------------------------------- START OF E-MAIL
+The on-demand DTN mode would work just sending a request when a user
+would like to know a resource value (e.g. by clicking on a button). So,
+there isn't any periodical notification service. Indeed, if the
+notification service is enabled and you have a disconnected WSI,
+disconnected sensors would receive no requests because a new mobile node
+is needed to deliver messages to disconnected nodes. Instead, if we show
+a single request (in on-demand mode), I have time to take a new mobile
+node from the source to the disconnected target node.
+
+For instance, assuming that we have a WSN composed by 3 nodes:
+
+N1 <---> N2 <---> N3
+
+where N1 is a packet forwarder (or PPP gateway) from PC to other nodes
+and vice versa, while N2 and N3 are sensor nodes.
+
+At a certain point N2 dies, so we'd have:
+
+N1 <XXXXXXXXXXXX> N3
+
+Now, if we send a new request to N3 from the UI (and the DTN is
+enabled), the WLAB WSIAdapter is programmed to deliver that request to
+N1 (the gateway), which periodically send it in multicast:
+
+N1(REQ) <XXXXXXXXXXXX> N3
+
+When a new mobile node is introduced we would have:
+
+N1(REQ) <-> N4 <XXXXX> N3
+
+so N4 will receive the request from N1, which is still sending. Since N4
+can move, it will able to deliver the packet to N3 and then will forward
+its response to N1:
+
+N1 <-> N4(REQ) <XXXXX> N3
+N1 <XXXXX> N4 <-> N3(REQ)
+N1 <XXXXX> N4 <-> N3(RESP)
+N1 <XXXXX> N4(RESP) <-> N3
+N1 <-> N4(RESP) <XXXXX> N3
+N1(RESP) <-> N4 <XXXXX> N3
+
+if the notification service is enabled (as at present) old
+requests on N1 might be overwritten by new ones in the meantime the
+mobile node takes old requests to the disconnected sensor.'
+
+<------------------------------------------------------------------------ END OF E-MAIL
+
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+***FIXED*** DONE *******************************************************
+***FIXED*** DONE *******************************************************
+***FIXED*** DONE *******************************************************
+***FIXED*** DONE *******************************************************
+***FIXED*** DONE *******************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+************************************************************************
+[code] Tomcat shutdown error:
+        SEVERE: The web application [/v10] appears to have started a thread named [ActiveMQ Transport: tcp://localhost/127.0.0.1:61616] but has failed to stop it. This
+       is very likely to create a memory leak.
+//DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ");
+
+[ui] Map selection. Show icon next to each capability in the info about node bubble!
+[ui] Show first marker (is not invisible)
+!! DONE: [ui] clear map selection should clear individual node selections too!
+!! DONE: [ui] select de select with right click! Handle node duplicates in region and selection sets
+!! [code] Notifications in DB + JS interface function!
+!! [code] node equivalencies in DB.
+[csiro] some pages are accessed without going through csiro (mainly servlets with specific paths like: http://amethyst.cti.gr/vitroui/CreateServiceServletPrepareForm)
+!! [code] Service continuation. Add a screen to indicate equivalent nodes for a VGW.
+          The query sent to a gateway should include an extra field with equivalent nodes.  (if continuation is requested)
+          Additionally, there could be a mode (auto) where the VGW decides and uses equivalent nodes (NO- WONT practically work well).
+          a) How does a gateway decide to switch to an equivalent node?
+                a1) Will we explicitly/remotely shutdown a node from the GUI?
+                a2) will the VGW ping the nodes? could it "auto-decide" that a node is down based on a timed out request?
+!! [vgw][code] Handle DTN switch
+!! [vgw][code] Handle "if-then" functions and "if then" conditions over aggregate functions. Could we merge the condition on the if-then function???
+!! install resin latest version on amethyst (4.0.32)
+1. At the login page (http://amethyst.cti.gr/vitroui/index.jsp?status=loggedOut) and when you login (http://amethyst.cti.gr/vitroui/),
+            add the following text on the left side: "VITRO Enabling the virtualization of IoT resources and services".
+             move the vitro logo to the left of the screen and add (below the logo) the sentence "Enabling the virtualization of IoT resources and services"
+           2. Also at the login page, insert the bootstrap-carousel.js with the attached images. Better images.
+           Beneath each image add the following text, respectively.
+           Beneath image 1: add as a title: "Explore the world" and then
+                                the text: "Access real-world knowledge via the VITRO platform in a user-friendly manner.
+                                            Personalize composite services ranging from traffic, product and environmental
+                                            monitoring over early warning systems and smart energy metering."
+           Beneath image 2:     title: "Be part of it"
+                                and text: "VITRO is an open and standards-based platform providing APIs for the development
+                                            of custom IoT applications as well as the easy installation of each and every
+                                            commercial hardware platform and software module, hiding heterogeneity from the end-user."
+           Beneath image 3:     title: "A wealth of novel services"
+                                and text "Advanced capabilities in sensor and system level thanks to the technological enhancements
+                                            leading to the virtualization of smart devices' resources and services."
+           Also, make carousel to scroll from image to image every 10 seconds without the need to press any arrow button.
+           Finally, make the strip of tabs "Home, Monitor Service, Alarms, Service Settings, etc" to stay static on top, even if we scroll the page down.
+           We discussed it on the phone. Maybe bootstrap-scrollspy.js is the right tool for that...? not so sure... but we have seen it in other pages.
+           3. Also, in all pages, on the upper right corner add the link to VITRO LinkedIn page (http://www.linkedin.com/groups/VITRO-4305849).
+[CODE][NO-BUG][WONTFIX] FinalResultEntryPerDef, lines: 343 -...// TODO: ++++ THIS FOR LOOP BRINGS ALSO OLD RESULTS? WHY DO WE ADD THE OBSERVATIONS HERE, WON'T THIS CREATE DUPLICATE ENTRIES IN THE DB?
+           for(int j=0; j< tmpResStructVec.size(); j++)
+[UI][VSP][CODE][CONSIDER][DONE] check timeout at VSP level for queries. It should be more than 5 minutes (limit of VGW with DTN response!)
+[DONE] [vgw][code] Handle aggregate functions on sets of nodes (now produces NaN ?!)
+[CSIRO][DONE] [2012-10-18 16:58:27,190] DEBUG AuthorizingRealm:234 - No authorizationCache instance set.  Checking for a cacheManager...
+        [2012-10-18 16:58:27,190]  INFO AuthorizingRealm:248 - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+[UI][DONE] show last server restart time on the footer.
+[UI][JQUERY] jquery or generic JS for compose new service
+[UI][JQUERY][DONE] jquery or generic JS for advanced query. ++ google maps panel!
+[UI][JQUERY][DONE] jquery or generic JS for deploy vitro services! ++ configuration panel!
+!!  new table 'usertovsnsmr' should possible connect with FK to existing tables for serviceinstance (or needs a new table for VNSDeployedID).
+!! [ui] Map selection. Code optimize!
+!! [ui] Show all nodes (unfiltered)?
+!! Some servlets do not have access control
+[][WONTSUPPORT][UI] Map selection. Multiple region selection (ctrl) (will not be supported)
+[][VSP][CODE}[DONE] Support VSNs with different nodes doing different tasks ( is it possible to create a VSN consisting of one node measuring temp and another node measuring humidity (composite service)?)
+[][VSP][CODE][DONE] Can we support Nodes belonging to 2 or more GATEWAYS!!?
+!! removed debug: <!-- Coordinates: <%= coordsFound.toString() %> <br/> -->
+[DONE] [map selection] remove?? Latest values of switchlight4 for this node: Week  Day Hour Custom Range
+ [][UI][MAP][DONE FOR GATEWAYS ADVANCED PAGE] fill map with node-set (of VSN: for monitoring or all: for service definition or edit)
+ !! [ui][map] Zoom map around node
+ !! [ui][map] Center map around node (or coordinates)
+ !! [ui] [nice-to-have] alert priorities <- we have levels, and types
+ !! [ui] select service, should trigger auto-alert check and clear existing alerts. Also reset map and retrieve sensors for new service
+ !! [ui and code] early sample for the compose service control.
+!! [ui and code] New service creation -> (stuff behind the scenes, Edit support (WONTDO: add new sensors, WONTDO: remove sensors, DONE: remove composed services)
+!! [ui] any button click should clear the notification field
+!! [ui] default to satellite view?
+[][ERROR][FIXED?] . NO LONGER APPEARS: log4j:ERROR exception setting timeout, shutting down server socket.
+                java.net.BindException: Address already in use: JVM_Bind
+                        at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+                        at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:96)
+                        at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+                        at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:175)
+                        at java.net.ServerSocket.bind(ServerSocket.java:376)
+                        at java.net.ServerSocket.<init>(ServerSocket.java:237)
+                        at java.net.ServerSocket.<init>(ServerSocket.java:128)
+                        at org.apache.log4j.net.SocketHubAppender.createServerSocket(SocketHubAppender.java:365)
+                        at org.apache.log4j.net.SocketHubAppender$ServerMonitor.run(SocketHubAppender.java:433)
+                        at java.lang.Thread.run(Thread.java:722)
+[][UI][NO LONGER RELEVANT] container should be a text area! (or multiline textbox)
+[][UI][CONTINUATION][DONE] integrate with Ajax! (deactivate node from VSN) (and then show the new /replacement node auto-activated)
+!![DONE][code] Query definition should support specific nodes subsets that correspond to different <Capability, Vector<Functions> >
+         Requires: one or three extra parameters:
+             HashMap <Region> -> <Capability, Vector<Functions> >                 (for Region Selection)
+             HashMap <GatewayId> -> <Capability, Vector<Functions> >              (for full WSI selections)
+             HashMap <GatewayId, SmartNodeId> -> <Capability, Vector<Functions> > (for specific sensor selections)
+
+         Affects: QueryContentDefinition, QueryProcessor
+         At VGW: Does it affect the XML templates ?(will the schema be altered)
+                 Does it affect the handling of GW level (Aggregate) functions
+             ** Affects middleware driver for uberdust, coap, wlab, thales, hai should test after the update
+ [][UI][DONE] referring to the alarm page... is it possible to retrieve the data of the sensor generating the alarm in that page?
+ [][UI][DONE] With each alert we also want info about the device that generated it.
+ [][UI][DONE] I guess if you have some info about the node, you could then retrieve the rest from the DB
+ [][UI][DONE] - we need to have a history of the generated alarms
+ [][UI][DB][DONE] We'll need to store it to an extra table (in addition to the observations)
+ [][UI][DB][DONE] We need it, if we want to keep the same history in the monitoring page and the alarm page.
+ [][DONE DIFFERENTLY] [ui] associate an alert or info message with a map node. On row click center the map on the node and show info bubble?
+ [][DONE (for single node)] [ui] associate the dygraph control with the node selection on screen (or with the commands within the node bubble).
+ [][DONE][UI][BUGFIX] "An invalid observation was found, with no associated capability or partial service!" message about the service Monitor AVG temp for CTI and WLAB. The -1 wildcard is causing issues for the guess capability ID method!! DEBUG!!
+                 (or was it because WLAB was offline?)
+[][CODE][UI] When a cap has (1-1) aggregate function then the last values are also written in the the DB (with the same cap id) and there is no way to distinguish them.
+                 1. We could use an extra field in the DB to show if this the "by default included" last value, or the "real" function that corresponds to the capability.
+                 2. These could be two fields, because a query could only request the Last value so both fields should be set in that case.: WHAT_E_DID: 3 fields, simple function name, function id in query definition, full funct name in query definition
+                 3. If an average/aggregate function has NaN it seems that the javascript getDataCapabilityForComposedService function would return a very high integer (max?) 4.52102016E8 !!!
+                    NO. actually some (CTI) x194 and 0x185 sensors seem to have send these values so it is "correct".
+                    FIXED at DB with: UPDATE vitrofrontenddb.Observation SET value = 299 WHERE value > 429497000 ;
+                 4. FIXED In the DB we have multiple entries for same measurment apparently (around the same time)
+                 5. FIXED fix dygraph message (order by timestamp the results!) "dygraphs: CSV is out of order; order it correctly to speed loading. (dygraph-combined.js:2)"

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://vitro.vgw.response"
+	xmlns:resp="http://vitro.vgw.response"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="vgw-response-type">
+	   <xs:sequence>
+			 <xs:element  name="success" type="xs:boolean"/>
+			 
+			 <xs:element  name="error-code" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+			 <xs:element  name="error-message" type="xs:string" minOccurs="0" maxOccurs="1" />
+			 
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="node-registration-result-type">
+	   <xs:sequence>
+	   		 <xs:element  name="node-id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			 <xs:element  name="success" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			 <xs:element  name="error-message" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="vgw-activation-response-type">
+		<xs:complexContent>
+      		<xs:extension base="resp:vgw-response-type">
+	      		<xs:sequence>
+		          <xs:element name="node-registation-result" type="resp:node-registration-result-type" minOccurs="1" maxOccurs="unbounded"/>
+		        </xs:sequence>
+      		</xs:extension>
+	    </xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="vgw-response">
+		<xs:complexType>
+			<xs:complexContent>
+	      		<xs:extension base="resp:vgw-response-type"/>
+		    </xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="vgw-activation-response">
+		<xs:complexType>
+			<xs:complexContent>
+	      		<xs:extension base="resp:vgw-activation-response-type"/>
+		    </xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

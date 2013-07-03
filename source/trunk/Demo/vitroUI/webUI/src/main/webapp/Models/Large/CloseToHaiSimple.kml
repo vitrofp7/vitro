@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" >
+<Document>
+  <name>CloseToHaiSimple</name>
+<Placemark>
+  <name></name>
+  <description></description>
+  <Style>
+    <LineStyle>
+      <color>91dec4b0</color>
+      <colorMode>normal</colorMode>
+      <width>1</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>91dec4b0</color>
+      <colorMode>normal</colorMode>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <MultiGeometry>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.608901079593,38.3341274370378,53.6702676667784
+23.608901079593,38.3341274370378,-11.17
+23.6074360936855,38.3350360701791,-5.92999999999997
+23.6074360936855,38.3350360701791,53.6702676667784
+23.608901079593,38.3341274370378,53.6702676667784
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.6074360936855,38.3350360701791,53.6702676667784
+23.608901079593,38.3341274370378,53.6702676667784
+23.6106217179084,38.3358484662735,53.6702676667784
+23.6091567212938,38.3367571211669,53.6702676667784
+23.6074360936855,38.3350360701791,53.6702676667784
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.6074360936855,38.3350360701791,53.6702676667784
+23.6074360936855,38.3350360701791,-5.92999999999997
+23.6091567212938,38.3367571211669,-5.92999999999997
+23.6091567212938,38.3367571211669,53.6702676667784
+23.6074360936855,38.3350360701791,53.6702676667784
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.6091567212938,38.3367571211669,53.6702676667784
+23.6091567212938,38.3367571211669,-5.92999999999997
+23.6106217179084,38.3358484662735,-11.17
+23.6106217179084,38.3358484662735,53.6702676667784
+23.6091567212938,38.3367571211669,53.6702676667784
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.6106217179084,38.3358484662735,53.6702676667784
+23.6106217179084,38.3358484662735,-11.17
+23.608901079593,38.3341274370378,-11.17
+23.608901079593,38.3341274370378,53.6702676667784
+23.6106217179084,38.3358484662735,53.6702676667784
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+23.6106217179084,38.3358484662735,-11.17
+23.6091567212938,38.3367571211669,-5.92999999999997
+23.6074360936855,38.3350360701791,-5.92999999999997
+23.608901079593,38.3341274370378,-11.17
+23.6106217179084,38.3358484662735,-11.17
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  </MultiGeometry>
+</Placemark>
+
+</Document>
+</kml>

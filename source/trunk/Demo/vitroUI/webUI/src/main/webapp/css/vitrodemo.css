@@ -1,0 +1,265 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #ffffff;
+	/*background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 8%, rgba(125,138,153,1) 100%);*/  /*FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,0)), color-stop(8%,rgba(229,229,229,0)), color-stop(100%,rgba(125,138,153,1))); /* Chrome,Safari4+ */
+	/*background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 8%,rgba(125,138,153,1) 100%);*/ /* Chrome10+,Safari5.1+ */
+	/*background: -o-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 8%,rgba(125,138,153,1) 100%);*/ /* Opera 11.10+ */
+/*	background: -ms-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 8%,rgba(125,138,153,1) 100%);*/ /* IE10+ */
+/*	background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 8%,rgba(125,138,153,1) 100%);*/ /* W3C */
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#7d8a99',GradientType=0 );*/ /* IE6-9 */
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+ 
+    p { font-family: georgia, tahoma, verdana,sans-serif; font-size: 11px; margin: 2em; }
+	  
+    input {font: 11px tahoma;}
+    button {font: 11px tahoma;}
+    select {
+		font: 11px tahoma;
+		width: 100%;
+	}
+	
+	
+    .verbosecol {
+        max-height: 500px;
+        overflow: auto;
+        margin-left: 8px;
+    }
+
+    .verbosecolForNewModelDevs {
+        max-height: 300px;
+        overflow: auto;
+        margin-left: 8px;
+    }
+
+    .progressResultmsgs {
+        border: none;
+    }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+	  
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+	  
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+	  
+	  .span10 {
+        margin-left: 0!important;
+	  }
+	  
+	  .hero-unit {
+        background-color: whiteSmoke;
+	  }
+	  .span10 .well {
+        background-color: whiteSmoke;
+ 		border-left: 0px transparent;
+	  }
+	  
+	  .reborder {
+		border: 1px solid #e3e3e3!important;
+	   }
+	  
+	  .servicecol1 {
+        background-color: #BFDEE3;
+	  }
+	  .servicecol2 {
+        background-color: #DDDDDD;
+ 	  }
+	  
+	  legend {
+        background-color: #BFDEE3;
+		margin-bottom: 0px;
+		padding-left: 5px;
+	  }
+	  
+	  strong {
+		padding-left: 10px;
+	  }
+	  
+		.sidebar-nav > .nav-tabs > .active > a, .sidebar-nav> .nav-tabs > .active > a:hover {
+			color: #555;
+			cursor: default;
+			background-color: whiteSmoke;
+			border-right: 0px transparent;
+			border-bottom-color: transparent;
+		}
+	#dashboardLogo a {
+		display: inline-block;
+		background: url(../img/VITROlogosml.png) no-repeat;
+		/* background-size: 350px; */
+        background-size: 280px;
+        padding-left: 260px;
+        padding-top: 38px;
+        margin-top: -8px;
+        text-align: left;
+    }
+
+	#logoHome {
+        font-size: 0.8em;
+        padding-top: 2em;
+        text-align: center;
+    }
+
+    #dhtmltooltip{
+        position: absolute;
+        width: 150px;
+        border: 2px solid #ecbb66;
+        padding: 2px;
+        background-color: lightyellow;
+        visibility: hidden;
+        z-index: 100;
+        /*Remove below line to remove shadow from tooltip. Below line should always appear last within this CSS*/
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+    }
+
+	#loginout{
+		float:right;
+	}
+
+	
+	#bar {
+	     text-align: left;
+	  
+		
+    }
+    
+    #bar ul {
+	   
+	    font-size:14px;
+	    padding:0;
+	    letter-spacing: 0.07em;
+	    margin-top: 5px;
+	    margin-bottom: 0px;
+	}
+	
+    #sidebar ul {
+	    font-size:14px;
+	    letter-spacing: 0.07em;
+	}
+	
+	#subServicesTbl .legend {
+	       background-color: #b2b5fc;
+	}
+
+	#alertsNotificationsTbl .legend {
+	       background-color: #b2b5fc;
+		   font-weight:bold;
+	}
+
+    #alertsNotificationsTbl td {
+	    font-size:11px;
+	    padding: 2px;
+	}
+	
+	
+	#loggedin {
+		background-color: #DFF0D8;
+	    max-width:600px;
+	    margin-left: auto;
+		margin-right: auto;
+	}	
+	
+	#notloggedin {
+	    background-color: #FCF8E3;
+	    max-width:600px;
+	    margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#map_span  {
+		margin-left: 5px;
+	}      
+
+	#side_span  {
+		margin-left: 5px;
+	}	
+	
+	#map_span input {
+	    font: 11px tahoma!important;
+		margin-left: 5px;
+	}
+
+	#footer {
+	    font-size: 0.8em;
+	    padding-top: 2em;
+	    text-align: center;
+	
+    }
+	#carousel
+		{
+	float: none;
+	  background-color: #ffffff;
+	margin-left: auto;
+		margin-right: auto;
+	border: 0px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+     -moz-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+          box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+	}
+
+#buttonbar
+		{
+	max-width: 640px;
+    padding-top: 8px;
+/*	  background-color: #ffffff;
+	margin-left: auto;
+		margin-right: auto;
+	border: 0px;
+	text-align:center;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+     -moz-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+          box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);*/
+	}
+
+#buttonbar ul { list-style: none; }
+#buttonbar ul li {display:inline;}
+
+.vitro-popover {
+  padding-bottom: 12px;
+  background-color: #f9f9f9;
+}
+.vitro-popover .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 12px;
+}
+
+#helpnewservice
+{
+background-color: #ffffff;
+
+}

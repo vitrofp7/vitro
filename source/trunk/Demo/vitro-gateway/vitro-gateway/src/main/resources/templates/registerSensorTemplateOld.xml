@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<RegisterSensor service="SOS" version="1.0.0"
+	xmlns="http://www.opengis.net/sos/1.0"
+	xmlns:swe="http://www.opengis.net/swe/1.0.1"
+	xmlns:ows="http://www.opengeospatial.net/ows" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="http://www.opengis.net/gml" 
+	xmlns:ogc="http://www.opengis.net/ogc"
+	xmlns:om="http://www.opengis.net/om/1.0" 
+	xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosRegisterSensor.xsd
+http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/extensions/observationSpecialization_override.xsd">
+	<SensorDescription>
+		<sml:SensorML version="1.0.1">
+			<sml:member>
+				<sml:System>
+					<sml:identification>
+						<sml:IdentifierList>
+							<sml:identifier>
+								<sml:Term definition="urn:x-ogc:def:identifier:IDAS:1.0:localIdentifier">
+									<sml:value>EM_N1</sml:value>
+								</sml:Term>
+							</sml:identifier>
+						</sml:IdentifierList>
+					</sml:identification>
+					<sml:classification>
+						<sml:ClassifierList>
+							<sml:classifier>
+								<sml:Term definition="urn:x-ogc:def:classifier:IDAS:1.0:system">
+									<sml:value>Estacion Meteorologica</sml:value>
+								</sml:Term>
+							</sml:classifier>
+						</sml:ClassifierList>
+					</sml:classification>
+					<sml:inputs>
+						<sml:InputList>
+							<sml:input name="">
+								<swe:ObservableProperty
+									definition="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature" />
+							</sml:input>
+							<sml:input name="">
+								<swe:ObservableProperty
+									definition="urn:x-ogc:def:phenomenon:IDAS:1.0:relativeHumidity" />
+							</sml:input>
+							<sml:input name="">
+								<swe:ObservableProperty
+									definition="urn:x-ogc:def:phenomenon:IDAS:1.0:location" />
+							</sml:input>
+						</sml:InputList>
+					</sml:inputs>
+					<sml:outputs>
+						<sml:OutputList>
+							<sml:output name="">
+								<swe:Quantity definition="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature">
+									<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:celsius" />
+								</swe:Quantity>
+							</sml:output>
+							<sml:output name="">
+								<swe:Quantity
+									definition="urn:x-ogc:def:phenomenon:IDAS:1.0:relativeHumidity">
+									<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:percent" />
+								</swe:Quantity>
+							</sml:output>
+							<sml:output name="">
+								<swe:Position>
+									<swe:location>
+										<swe:Vector referenceFrame="urn:x-ogc:def:crs:IDAS:1.0:CRS84">
+											<swe:coordinate name="latitude">
+												<swe:Quantity definition="urn:x-ogc:def:phenomenon:IDAS:1.0:latitude">
+													<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:degree" />
+												</swe:Quantity>
+											</swe:coordinate>
+											<swe:coordinate name="longitude">
+												<swe:Quantity definition="urn:x-ogc:def:phenomenon:IDAS:1.0:longitude">
+													<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:degree" />
+												</swe:Quantity>
+											</swe:coordinate>
+										</swe:Vector>
+									</swe:location>
+								</swe:Position>
+							</sml:output>
+						</sml:OutputList>
+					</sml:outputs>
+					<sml:components>
+						<sml:ComponentList>
+							<sml:component name="">
+								<sml:Component>
+									<sml:identification>
+										<sml:IdentifierList>
+											<sml:identifier>
+												<sml:Term definition="urn:x-ogc:def:identifier:IDAS:1.0:serialNumber">
+													<sml:value>DF34GPS456</sml:value>
+												</sml:Term>
+											</sml:identifier>
+										</sml:IdentifierList>
+									</sml:identification>
+									<sml:classification>
+										<sml:ClassifierList>
+											<sml:classifier>
+												<sml:Term definition="urn:x-ogc:def:classifier:IDAS:1.0:sensor">
+													<sml:value>ReceptorGPS</sml:value>
+												</sml:Term>
+											</sml:classifier>
+										</sml:ClassifierList>
+									</sml:classification>
+									<sml:inputs>
+										<sml:InputList>
+											<sml:input name="">
+												<swe:ObservableProperty
+													definition="urn:x-ogc:def:phenomenon:IDAS:1.0:location" />
+											</sml:input>
+										</sml:InputList>
+									</sml:inputs>
+									<sml:outputs>
+										<sml:OutputList>
+											<sml:output name="">
+												<swe:Position>
+													<swe:location>
+														<swe:Vector referenceFrame="urn:x-ogc:def:crs:IDAS:1.0:CRS84">
+															<swe:coordinate name="latitude">
+																<swe:Quantity
+																	definition="urn:x-ogc:def:phenomenon:IDAS:1.0:latitude ">
+																	<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:degree" />
+																</swe:Quantity>
+															</swe:coordinate>
+															<swe:coordinate name="longitude">
+																<swe:Quantity definition="urn:x-ogc:def:IDAS:1.0:longitude">
+																	<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:degree" />
+																</swe:Quantity>
+															</swe:coordinate>
+														</swe:Vector>
+													</swe:location>
+												</swe:Position>
+											</sml:output>
+										</sml:OutputList>
+									</sml:outputs>
+								</sml:Component>
+							</sml:component>
+							<sml:component name="">
+								<sml:Component>
+									<sml:identification>
+										<sml:IdentifierList>
+											<sml:identifier>
+												<sml:Term definition="urn:x-ogc:def:identifier:IDAS:1.0:serialNumber">
+													<sml:value>234TEMP98H</sml:value>
+												</sml:Term>
+											</sml:identifier>
+										</sml:IdentifierList>
+									</sml:identification>
+									<sml:classification>
+										<sml:ClassifierList>
+											<sml:classifier>
+												<sml:Term definition="urn:x-ogc:def:classifier:IDAS:1.0:sensor">
+													<sml:value>Termometro
+													</sml:value>
+												</sml:Term>
+											</sml:classifier>
+										</sml:ClassifierList>
+									</sml:classification>
+									<sml:inputs>
+										<sml:InputList>
+											<sml:input name="">
+												<swe:ObservableProperty
+													definition="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature" />
+											</sml:input>
+										</sml:InputList>
+									</sml:inputs>
+									<sml:outputs>
+										<sml:OutputList>
+											<sml:output name="">
+												<swe:Quantity
+													definition="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature">
+													<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:celsius" />
+												</swe:Quantity>
+											</sml:output>
+										</sml:OutputList>
+									</sml:outputs>
+								</sml:Component>
+							</sml:component>
+							<sml:component name="">
+								<sml:Component>
+									<sml:identification>
+										<sml:IdentifierList>
+											<sml:identifier>
+												<sml:Term definition="urn:x-ogc:def:identifier:IDAS:1.0:serialNumber">
+													<sml:value>HUM76098AB</sml:value>
+												</sml:Term>
+											</sml:identifier>
+										</sml:IdentifierList>
+									</sml:identification>
+									<sml:classification>
+										<sml:ClassifierList>
+											<sml:classifier>
+												<sml:Term definition="urn:x-ogc:def:classifier:IDAS:1.0:sensor">
+													<sml:value>SensorHumedad</sml:value>
+												</sml:Term>
+											</sml:classifier>
+										</sml:ClassifierList>
+									</sml:classification>
+									<sml:inputs>
+										<sml:InputList>
+											<sml:input name="">
+												<swe:ObservableProperty
+													definition="urn:x-ogc:def:phenomenon:IDAS:1.0:relativeHumidity" />
+											</sml:input>
+										</sml:InputList>
+									</sml:inputs>
+									<sml:outputs>
+										<sml:OutputList>
+											<sml:output name="">
+												<swe:Quantity
+													definition="urn:x-ogc:def:phenomenon:IDAS:1.0:relativeHumidity">
+													<swe:uom xlink:href="urn:x-ogc:def:uom:IDAS:1.0:percent" />
+												</swe:Quantity>
+											</sml:output>
+										</sml:OutputList>
+									</sml:outputs>
+								</sml:Component>
+							</sml:component>
+						</sml:ComponentList>
+					</sml:components>
+				</sml:System>
+			</sml:member>
+		</sml:SensorML>
+	</SensorDescription>
+	<ObservationTemplate>
+		<om:Measurement>
+			<om:samplingTime />
+			<om:procedure />
+			<om:observedProperty />
+			<om:featureOfInterest></om:featureOfInterest>
+			<om:result uom=""></om:result>
+		</om:Measurement>
+	</ObservationTemplate>
+</RegisterSensor>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- September, 2011 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_cdata_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/customer/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/customer/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->  
+
+	<xsd:complexType name="PropertyType">
+      <xsd:sequence>
+         <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="PropertiesType">
+      <xsd:sequence>
+            <xsd:element name="property" type="m2m_cdata_s1t:PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+    <xsd:complexType name="CustomerType">
+	    <xsd:sequence>
+		    <xsd:element name="globalUserID" type="uct:UserIdType" minOccurs="1" maxOccurs="1"/>	
+		    <xsd:element name="globalAppID" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+		    <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>		
+		    <xsd:element name="properties" type="m2m_cdata_s1t:PropertiesType" minOccurs="0" maxOccurs="1"/>	
+	    </xsd:sequence>
+    </xsd:complexType>	 
+	<!-- Types of operations -->
+    <xsd:element name="addCustomer">
+	    <xsd:complexType>
+		    <xsd:sequence>
+				<xsd:element name="customer" type="m2m_cdata_s1t:CustomerType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>    
+	<xsd:element name="addCustomerResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+    <xsd:element name="deleteCustomer">
+	    <xsd:complexType>
+		    <xsd:sequence>
+				<xsd:element name="customer" type="m2m_cdata_s1t:CustomerType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>    
+	<xsd:element name="deleteCustomerResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>    
+    <xsd:element name="updateCustomer">
+	    <xsd:complexType>
+		    <xsd:sequence>
+				<xsd:element name="customer" type="m2m_cdata_s1t:CustomerType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>    
+    <xsd:element name="updateCustomerResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>  
+</xsd:schema>

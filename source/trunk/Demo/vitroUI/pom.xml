@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>VITROui</artifactId>
+    <groupId>VITRO</groupId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+
+    <modules>
+        <module>unicaAPI</module>
+        <module>vspEngine</module>
+        <module>webUI</module>
+        <module>webWS</module>
+        <module>../VirtualSensor</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <jdbc.user>USERNAME</jdbc.user>
+        <jdbc.passwd>PASSWORD</jdbc.passwd>
+        <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+        <jdbc.ds>com.mysql.jdbc.jdbc2.optional.MysqlDataSource</jdbc.ds>
+        <jdbc.url>jdbc:mysql://localhost:3306/vitrofrontenddb</jdbc.url>
+        <jdbc.serverName>localhost</jdbc.serverName>
+        <jdbc.portNumber>3306</jdbc.portNumber>
+        <jdbc.databaseName>vitrofrontenddb</jdbc.databaseName>
+        <commonsconfiguration.version>1.8</commonsconfiguration.version>
+
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>${commonsconfiguration.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <repositories>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

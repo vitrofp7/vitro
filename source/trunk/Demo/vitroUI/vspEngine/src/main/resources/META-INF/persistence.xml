@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="vspPU">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+<!--        <jta-data-source>jdbc/vspPU</jta-data-source> -->
+		<properties>
+
+            <!-- Scan for annotated classes and Hibernate mapping XML files -->
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.show_sql" value="false" /> <!--- new changed from true, to avoid all the sql query messages -->
+			<property name="hibernate.format_sql" value="true" />
+<!--			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />-->
+			<!-- Datasource configuration -->
+			<property name="hibernate.connection.driver_class" value="${jdbc.driverClassName}" />
+			<property name="hibernate.connection.url" value="${jdbc.url}" />
+			<property name="hibernate.connection.username" value="${jdbc.user}" />
+			<property name="hibernate.connection.password" value="${jdbc.passwd}"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+
+            <property name="hibernate.connection.provider_class" value="org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider" />
+
+            <property name="hibernate.c3p0.max_size" value="100" />
+            <property name="hibernate.c3p0.min_size" value="0" />
+            <property name="hibernate.c3p0.acquire_increment" value="1" />
+            <property name="hibernate.c3p0.idle_test_period" value="300" />
+            <property name="hibernate.c3p0.max_statements" value="0" />
+            <property name="hibernate.c3p0.timeout" value="100" />
+		</properties>
+	</persistence-unit>
+</persistence>

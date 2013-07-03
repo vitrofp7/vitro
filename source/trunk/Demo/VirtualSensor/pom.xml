@@ -1,0 +1,100 @@
+<!--
+  ~ #--------------------------------------------------------------------------
+  ~ # Copyright (c) 2013 VITRO FP7 Consortium.
+  ~ # All rights reserved. This program and the accompanying materials
+  ~ # are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  ~ # http://www.gnu.org/licenses/lgpl-3.0.html
+  ~ #
+  ~ # Contributors:
+  ~ #     Antoniou Thanasis
+  ~ #     Paolo Medagliani
+  ~ #     D. Davide Lamanna
+  ~ #     Panos Trakadas
+  ~ #     Andrea Kropp
+  ~ #     Kiriakos Georgouleas
+  ~ #     Panagiotis Karkazis
+  ~ #     David Ferrer Figueroa
+  ~ #     Francesco Ficarola
+  ~ #     Stefano Puglia
+  ~ #--------------------------------------------------------------------------
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>VITRO</groupId>
+        <artifactId>VITROui</artifactId>
+        <relativePath>../vitroUI/pom.xml</relativePath>
+        <version>1.0</version>
+    </parent>
+    <artifactId>VirtualSensor</artifactId>
+    <name>VirtualSensor</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <jackson.version>1.8.6</jackson.version>
+        <logback.version>1.0.0</logback.version>
+        <slf4j.version>1.6.4</slf4j.version>
+        <cxf.version>2.6.0</cxf.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>         
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>xmlschema-core</artifactId>
+            <groupId>org.apache.ws.xmlschema</groupId>
+            <type>jar</type>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>unicaAPI</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build> 
+    <groupId>VITRO</groupId>
+    <version>1.0</version>
+</project>

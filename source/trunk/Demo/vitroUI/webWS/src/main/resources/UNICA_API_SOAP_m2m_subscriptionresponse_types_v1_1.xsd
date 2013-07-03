@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- October, 2010 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_subs_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/subscriptionresponse/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/subscriptionresponse/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->
+	<!-- Operation types -->
+	<xsd:element name="subscribeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="subscriptionLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="outgoingConnectionId" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="subscribeResponseResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="disconnectResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="disconnectResponseResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="unsubscribeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="subscriptionLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="unsubscribeResponseResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

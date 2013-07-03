@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<InsertObservation xmlns="http://www.opengis.net/sos/1.0"
+	xmlns:ns2="http://www.opengis.net/gml" xmlns:ns3="http://www.w3.org/1999/xlink"
+	xmlns:ns4="http://www.opengis.net/om/1.0" xmlns:ns5="http://www.opengis.net/swe/1.0.1"
+	xmlns:ns6="http://www.opengis.net/sensorML/1.0.1" xmlns:ns7="urn:us:gov:ic:ism:v2"
+	xmlns:ns8="http://www.opengis.net/ogc" xmlns:ns9="http://www.w3.org/2001/SMIL20/"
+	xmlns:ns10="http://www.opengis.net/ows/1.1" xmlns:ns11="http://www.w3.org/2001/SMIL20/Language"
+	version="1.0.0" service="SOS">
+	<AssignedSensorId>00:21:9B:51:8F:BA</AssignedSensorId>
+	<ns4:Observation ns2:id="vitrogw.w-lab.it.00:21:9B:51:8F:BA">
+		<ns4:samplingTime ns3:type="simple">
+			<ns2:TimeInstant frame="urn:x-ogc:def:trs:IDAS:1.0:ISO8601">
+				<ns2:timePosition frame="urn:x-ogc:def:trs:IDAS:1.0:ISO8601">2012-04-19T10:21:06.000000Z</ns2:timePosition>
+			</ns2:TimeInstant>
+		</ns4:samplingTime>
+		<ns4:procedure ns3:href="00:21:9B:51:8F:BA" ns3:type="simple" />
+		<ns4:observedProperty ns3:href="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature" ns3:type="simple" />
+		<ns4:featureOfInterest />
+
+		<ns4:parameter
+			ns3:href="urn:x-ogc:def:identifier:IDAS:1.0:UniversalIdentifierOfLogicalHub"
+			ns3:type="simple">
+			<ns5:Text fixed="false">
+				<ns5:value>vitrogw.w-lab.it</ns5:value>
+			</ns5:Text>
+		</ns4:parameter>
+		
+		<ns4:result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:type="ns5:QuantityPropertyType">
+			<ns5:Quantity definition="urn:x-ogc:def:phenomenon:IDAS:1.0:temperature"
+				fixed="false">
+				<ns5:uom ns3:type="simple" code="celsius" />
+				<ns5:value>10.0</ns5:value>
+			</ns5:Quantity>
+		</ns4:result>
+	</ns4:Observation>
+</InsertObservation>
+

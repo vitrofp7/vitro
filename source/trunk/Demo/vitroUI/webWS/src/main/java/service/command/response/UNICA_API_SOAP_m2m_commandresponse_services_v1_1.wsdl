@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- October, 2010 -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:m2m_cmdresp_s1="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/commandresponse/v1/services" xmlns:m2m_cmdresp_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/commandresponse/v1/types" xmlns:uch="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" xmlns:ucf="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" xmlns:utih="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/commandresponse/v1/services">
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" location="UNICA_API_SOAP_common_faults_v1_0.wsdl"/>
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" location="UNICA_API_SOAP_common_security_headers_v1_0.wsdl"/>
+    <wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" location="UNICA_API_SOAP_common_transaction_info_header_v2_0.wsdl"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/v1/" elementFormDefault="qualified">
+			<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/commandresponse/v1/types" schemaLocation="UNICA_API_SOAP_m2m_commandresponse_types_v1_1.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="CommandSensorResultRequest">
+		<wsdl:part name="parameters" element="m2m_cmdresp_s1t:commandSensorResult"/>
+	</wsdl:message>
+	<wsdl:message name="CommandSensorResultResponse">
+		<wsdl:part name="parameters" element="m2m_cmdresp_s1t:commandSensorResultResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="CommandResponsePort">
+		<wsdl:operation name="commandSensorResult">
+			<wsdl:input message="m2m_cmdresp_s1:CommandSensorResultRequest"/>
+			<wsdl:output message="m2m_cmdresp_s1:CommandSensorResultResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CommandResponseSOAPBinding" type="m2m_cmdresp_s1:CommandResponsePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="commandSensorResult">
+			<soap:operation soapAction="urn:commandSensorResult"/>
+			<wsdl:input>
+                <soap:header message="utih:UplinkTransactionInfoHeader" part="uplinkTransactionInfoHeader" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="M2MCommandResponseService">
+		<wsdl:port name="CommandResponse" binding="m2m_cmdresp_s1:CommandResponseSOAPBinding">
+			<soap:address location="http://localhost/UNICA_SDP/M2M/CommandResponse"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

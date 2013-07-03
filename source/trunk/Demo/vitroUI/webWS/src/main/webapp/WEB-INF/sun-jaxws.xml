@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+
+    <endpoint
+            name='HelloWorld'
+            implementation='example.HelloWorld'
+            url-pattern='/services/HelloWorld'/>
+
+    <endpoint
+            port="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/subscriptionresponse/v1/services}SubscriptionResponse"
+            service="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/subscriptionresponse/v1/services}M2MSubscriptionResponseService"
+            name='SubscriptionResponse'
+            implementation='service.subscription.response.SubscriptionResponseImpl'
+            url-pattern='/services/SubscriptionResponse'/>
+
+    <endpoint
+            port="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/notification/v1/services}Notification"
+            service="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/notification/v1/services}M2MNotificationService"
+            name='Notification'
+            implementation='service.notification.NotificationImpl'
+            url-pattern='/services/Notification'/>
+
+    <endpoint
+            port="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/commandresponse/v1/services}CommandResponse"
+            service="{http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/commandresponse/v1/services}M2MCommandResponseService"
+            name='CommandResponse'
+            implementation='service.command.response.CommandResponseImpl'
+            url-pattern='/services/CommandResponse'/>
+
+</endpoints>
+

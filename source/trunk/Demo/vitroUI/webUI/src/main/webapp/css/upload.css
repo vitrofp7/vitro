@@ -1,0 +1,16 @@
+    
+.prog-border {
+		height: 15px;
+		width: 205px;
+		background: #fff;
+		border: 1px solid #000;
+		margin: 0;
+		padding: 0;
+}
+
+.prog-bar {
+		height: 11px;
+		margin: 2px;
+		padding: 0px;
+		background: #00ff00;
+}  

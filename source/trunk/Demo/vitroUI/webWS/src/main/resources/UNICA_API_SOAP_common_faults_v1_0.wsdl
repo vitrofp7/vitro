@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--December 16, 2009 -->
+<wsdl:definitions
+   targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults"
+   xmlns:tns="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" 
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+   <wsdl:types>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1"
+			targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults"
+			elementFormDefault="qualified">	
+      	
+      <xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+      
+      <xsd:element name="ClientException" type="uct:ClientExceptionType"/>
+      <xsd:element name="ServerException" type="uct:ServerExceptionType"/>
+      
+      </xsd:schema>
+	
+	</wsdl:types>
+
+   <wsdl:message name="ServerException">
+      <wsdl:part name="ServerException" element="tns:ServerException"/>
+   </wsdl:message>
+
+   <wsdl:message name="ClientException">
+      <wsdl:part name="ClientException" element="tns:ClientException"/>
+   </wsdl:message>
+   
+</wsdl:definitions>
