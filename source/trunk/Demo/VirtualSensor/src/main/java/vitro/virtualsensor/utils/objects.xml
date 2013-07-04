@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ #--------------------------------------------------------------------------
+  ~ # Copyright (c) 2013 VITRO FP7 Consortium.
+  ~ # All rights reserved. This program and the accompanying materials
+  ~ # are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  ~ # http://www.gnu.org/licenses/lgpl-3.0.html
+  ~ #
+  ~ # Contributors:
+  ~ #     Antoniou Thanasis
+  ~ #     Paolo Medagliani
+  ~ #     D. Davide Lamanna
+  ~ #     Panos Trakadas
+  ~ #     Andrea Kropp
+  ~ #     Kiriakos Georgouleas
+  ~ #     Panagiotis Karkazis
+  ~ #     David Ferrer Figueroa
+  ~ #     Francesco Ficarola
+  ~ #     Stefano Puglia
+  ~ #--------------------------------------------------------------------------
+  -->
+
+<gml:Dictionary gml:id="objects" xsi:schemaLocation="urn:ogc:def:dictionary:PAID:1.0:paid schemas/PaidDefiniciones.xsd" xmlns:gml="http://www.opengis.net/gml" xmlns:paid="urn:ogc:def:dictionary:PAID:1.0:paid" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<gml:name>Diccionario de objetos</gml:name>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="identifier">
+			<gml:description>Identifier</gml:description>
+			<gml:name>identifier</gml:name>
+			<paid:identifier>1</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="classifier">
+			<gml:description>Classifier</gml:description>
+			<gml:name>classifier</gml:name>
+			<paid:identifier>2</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="property">
+			<gml:description>Property</gml:description>
+			<gml:name>property</gml:name>
+			<paid:identifier>3</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="coord_system">
+			<gml:description>Coordinates System</gml:description>
+			<gml:name>cs</gml:name>
+			<paid:identifier>4</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="coord_ref_system">
+			<gml:description>Coordinates Reference System</gml:description>
+			<gml:name>crs</gml:name>
+			<paid:identifier>5</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="time_ref_system">
+			<gml:description>Time Reference System</gml:description>
+			<gml:name>trs</gml:name>
+			<paid:identifier>6</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="time_system">
+			<gml:description>Time System</gml:description>
+			<gml:name>ts</gml:name>
+			<paid:identifier>7</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="phenomenon">
+			<gml:description>Phenomenon</gml:description>
+			<gml:name>phenomenon</gml:name>
+			<paid:identifier>8</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<paid:PaidDefinition gml:id="uom">
+			<gml:description>Unit Of Measure</gml:description>
+			<gml:name>uom</gml:name>
+			<paid:identifier>9</paid:identifier>
+		</paid:PaidDefinition>
+	</gml:dictionaryEntry>
+</gml:Dictionary>

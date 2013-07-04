@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- October, 2010 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_notif_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/notification/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/notification/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->
+	<xsd:simpleType name="EventKindType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Register"/>
+			<xsd:enumeration value="Observation"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Types of operations -->
+	<xsd:element name="notify">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="subscriptionLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="eventKind" type="m2m_notif_s1t:EventKindType" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="xmlRegister" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="notifyResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

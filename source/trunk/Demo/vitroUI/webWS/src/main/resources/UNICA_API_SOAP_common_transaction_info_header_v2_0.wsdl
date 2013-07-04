@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Release Date: May 7, 2010 -->
+<!--This header will be included in API communications from gSDP to lSDP/rSDP in order to transmit relevant information about the Application of a Service that invoked the API Asset -->
+<wsdl:definitions
+   targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header"
+   xmlns:tns="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+   <wsdl:types>
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header"
+			elementFormDefault="qualified">	
+    
+      <xsd:element name="transactionInfoHeader" type="tns:TransactionInfoHeaderType"/>
+      <xsd:complexType name="TransactionInfoHeaderType">
+	  	<xsd:annotation>
+            <xsd:documentation>Includes the Service Identifier, the Application Identifier, the Asset Identifier and a Transaction Identifier</xsd:documentation>
+        	</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="servId" type="xsd:int"/>
+			<xsd:element name="appId" type="xsd:int"/>
+			<xsd:element name="assetId" type="xsd:int"/>
+			<xsd:element name="transactionId" type="xsd:string"/>
+			<xsd:element name="appProviderId" type="xsd:string"/>
+		</xsd:sequence>
+	  </xsd:complexType>
+	  
+	  <xsd:element name="uplinkTransactionInfoHeader" type="tns:UplinkTransactionInfoHeaderType"/>
+      <xsd:complexType name="UplinkTransactionInfoHeaderType">
+	  	<xsd:annotation>
+            <xsd:documentation>Includes a Transaction Identifier</xsd:documentation>
+        	</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="transactionId" type="xsd:string"/>
+		</xsd:sequence>
+	  </xsd:complexType>
+            
+      </xsd:schema>
+   
+   </wsdl:types>
+
+   <wsdl:message name="TransactionInfoHeader">
+      <wsdl:part name="transactionInfoHeader" element="tns:transactionInfoHeader"/>
+   </wsdl:message>
+   
+   <wsdl:message name="UplinkTransactionInfoHeader">
+      <wsdl:part name="uplinkTransactionInfoHeader" element="tns:uplinkTransactionInfoHeader"/>
+   </wsdl:message>
+
+</wsdl:definitions>

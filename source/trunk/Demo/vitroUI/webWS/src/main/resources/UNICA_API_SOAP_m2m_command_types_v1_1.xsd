@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- October, 2010 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_cmd_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/command/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/command/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->
+	<xsd:complexType name="CommandSensorType">
+		<xsd:sequence>
+			<xsd:element name="nodeId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="commandML" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Types of operations -->
+	<!--  operation request element -->
+	<xsd:element name="commandSensor">
+		<xsd:annotation>
+			<xsd:documentation>
+				Request parameter for the commandSensor operation
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="simpleReference" type="uct:SimpleReferenceType" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="command" type="m2m_cmd_s1t:CommandSensorType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  operation response element  -->
+	<xsd:element name="commandSensorResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

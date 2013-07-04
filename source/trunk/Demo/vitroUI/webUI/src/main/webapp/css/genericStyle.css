@@ -1,0 +1,83 @@
+    body { 
+			margin: 0; 
+			padding: 0; 
+			background: #ffffff; 
+			/*font: 11px tahoma;*/
+		}
+    
+    /*table {
+        font: 11px tahoma;
+    }*/
+
+    table {
+        font: 12px tahoma;
+        /*width:90%;*/
+        border-top:none;
+        border-right:none;
+        margin:.1em auto;
+        border-collapse: collapse;
+    }
+    td {
+        color:#678197;
+        border-bottom:none;
+        border-left:none;
+        /*text-align:center;  */
+    }
+     
+    p { font-family: georgia, tahoma, verdana,sans-serif; font-size: 11px; margin: 2em; }
+
+    .verbosecol {
+        max-height: 500px;
+        overflow: auto;
+        margin-left: 8px;
+    }
+
+    .verbosecolForNewModelDevs {
+        max-height: 300px;
+        overflow: auto;
+        margin-left: 8px;
+    }
+
+    .progressResultmsgs {
+        border: none;
+    }
+    
+    input {font: 11px tahoma;}
+    button {font: 11px tahoma;}
+    select {font: 11px tahoma;}
+
+    #footer {
+     font-size: 0.8em;
+     padding-top: 2em;
+     text-align: center;
+    }
+
+    #logoHome {
+        font-size: 0.8em;
+        padding-top: 2em;
+        text-align: center;
+    }
+
+    #dhtmltooltip{
+        position: absolute;
+        width: 150px;
+        border: 2px solid #ecbb66;
+        padding: 2px;
+        background-color: lightyellow;
+        visibility: hidden;
+        z-index: 100;
+        /*Remove below line to remove shadow from tooltip. Below line should always appear last within this CSS*/
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+    }
+
+    #loginout{
+		float:right;
+	}
+	
+	#bar {
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+   

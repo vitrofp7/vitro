@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:cxf="http://cxf.apache.org/core"
+  xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://cxf.apache.org/jaxrs
+http://cxf.apache.org/schemas/jaxrs.xsd http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+  <import resource="classpath:META-INF/cxf/cxf.xml" />
+  <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+  <context:property-placeholder/>
+  <context:annotation-config/>
+  <bean class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer"/>
+  <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer"/>
+ 
+     <!-- logging Use this configuration for a fine grained loggin control 
+    
+    <bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+
+    <bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+    
+    <cxf:bus>
+        <cxf:inInterceptors>
+            <ref bean="logInbound" />
+        </cxf:inInterceptors>
+        <cxf:inFaultInterceptors>
+            <ref bean="logInbound" />
+        </cxf:inFaultInterceptors>
+        <cxf:outInterceptors>
+            <ref bean="logOutbound" />
+        </cxf:outInterceptors>
+
+    </cxf:bus>
+	-->	
+    
+	<!-- Application Modules -->
+	
+	<bean id="idas-proxy-impl" class="vitro.vgw.communication.idas.IdasProxyImpl" scope="singleton">
+		 <constructor-arg>
+            <value>http://195.235.93.106:8002/idas/sml</value>
+        </constructor-arg>
+	</bean>
+	
+	<bean id="idas-proxy-stub" class="vitro.vgw.communication.idas.IdasProxyStub" scope="singleton">
+	</bean>
+	
+	<bean id="wsiAdapter" class="vitro.vgw.wsiadapter.WSIAdapterCoap">
+		<property name="nodeIdList">
+			<list>
+	           <value>fec0:0:0:1::1</value>
+	           <value>fec0:0:0:1::2</value>
+	           <value>fec0:0:0:1::3</value>
+	           <value>fec0:0:0:1::4</value>
+	       	</list>
+		</property>
+		
+	
+	</bean>
+
+	<bean id="wsiAdapter-stub" class="vitro.vgw.wsiadapter.WSIAdapterStub"/>
+
+
+	<bean id="sensorMLMessageAdapter" class="vitro.vgw.service.SensorMLMessageAdapter" init-method="init" scope="singleton"/>
+	
+	<bean id="rsController" class="vitro.vgw.rscontroller.RSControllerStub">
+		<property name="wsiAdapter">
+			<ref bean="wsiAdapter"/>
+		</property>
+	</bean>
+	
+	<bean id="vgw-service" class="vitro.vgw.service.VitroGatewayService" init-method="init" scope="singleton">
+		<property name="rsController">
+			<ref bean="rsController"/>
+		</property>
+		<property name="idas">
+			<ref bean="idas-proxy-impl"/>
+		</property>
+		<property name="sensorMLMessageAdapter">
+			<ref bean="sensorMLMessageAdapter"/>
+		</property>
+		<property name="gatewayLogicalName">
+			<value>vitrogw_wlab</value>
+		</property>
+	</bean> 
+
+
+	<!-- Service EndPoint Configuration -->
+	<jaxrs:server id="services" address="/" >
+	   	<jaxrs:schemaLocations >
+		     <jaxrs:schemaLocation>classpath:/schemas/request.xsd</jaxrs:schemaLocation>
+		     <jaxrs:schemaLocation>classpath:/schemas/response.xsd</jaxrs:schemaLocation>
+	  	</jaxrs:schemaLocations>
+	   
+	   	<jaxrs:features><cxf:logging/></jaxrs:features>
+	   	
+	    <jaxrs:serviceBeans >
+	     	<ref bean="vgw-service"/> 
+	    </jaxrs:serviceBeans>
+	 </jaxrs:server>
+	
+   
+
+</beans>

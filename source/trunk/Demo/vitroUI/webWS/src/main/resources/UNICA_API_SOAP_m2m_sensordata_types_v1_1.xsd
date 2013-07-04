@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- January, 2011 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_sdata_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/sensordata/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/sensordata/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->          
+	<xsd:complexType name="ServiceIdType">
+		<xsd:sequence>
+			<xsd:element name="logicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConcentratorIdType">
+		<xsd:sequence>
+			<xsd:element name="logicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>    
+    <xsd:complexType name="SimType">
+		<xsd:sequence>
+			<xsd:element name="sim" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+    <xsd:complexType name="SimsType">
+	    <xsd:sequence>
+		    <xsd:element name="sim" type="m2m_sdata_s1t:SimType" minOccurs="0" maxOccurs="unbounded"/>                           
+	    </xsd:sequence>
+    </xsd:complexType>     	
+	<xsd:complexType name="UniversalConcentratorType">
+		<xsd:sequence>
+			<xsd:element name="universalConcentrator" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<xsd:complexType name="UniversalConcentratorsType">
+		<xsd:sequence>
+			<xsd:element name="universalConcentrator" type="m2m_sdata_s1t:UniversalConcentratorType" minOccurs="0" maxOccurs="unbounded"/>                           
+		</xsd:sequence>
+	</xsd:complexType>		
+   <xsd:complexType name="AuthenticationProfileType">
+      <xsd:sequence>
+         <xsd:element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="password" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>  
+    <xsd:complexType name="NetAuthenticationProfilesType">
+	    <xsd:sequence>
+		    <xsd:element name="netAuthenticationProfile" type="m2m_sdata_s1t:AuthenticationProfileType" minOccurs="0" maxOccurs="unbounded"/>                           
+	    </xsd:sequence>
+    </xsd:complexType>    
+	<xsd:complexType name="LogicalGroupIdType">
+		<xsd:sequence>
+			<xsd:element name="logicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DeviceIdType">
+		<xsd:sequence>
+			<xsd:element name="globalIdentifier" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<xsd:complexType name="ConcentratorType">
+		<xsd:sequence>
+			<xsd:element name="concentratorId" type="m2m_sdata_s1t:ConcentratorIdType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="logicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="location" type="m2m_sdata_s1t:LocationType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ipAddress" type="uct:IpAddressType" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<xsd:complexType name="ConcentratorsType">
+		<xsd:sequence>
+			<xsd:element name="concentrator" type="m2m_sdata_s1t:ConcentratorType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DeviceType">
+		<xsd:sequence>
+			<xsd:element name="deviceID" type="m2m_sdata_s1t:DeviceIdType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="creationTime" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="registrationTime" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="status" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<xsd:complexType name="DevicesType">
+		<xsd:sequence>
+			<xsd:element name="device" type="m2m_sdata_s1t:DeviceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>		
+	<xsd:complexType name="LogicalGroupType">
+		<xsd:sequence>
+			<xsd:element name="logicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>		
+	<xsd:complexType name="LogicalGroupsType">
+		<xsd:sequence>
+			<xsd:element name="logicalGroup" type="m2m_sdata_s1t:LogicalGroupType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>		
+	<xsd:complexType name="BusinessDeviceType">
+		<xsd:sequence>
+			<xsd:element name="deviceURN" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="typeOfURN" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="detailedBusinessDevice" type="m2m_sdata_s1t:TypedAvPairType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType> 
+	<xsd:complexType name="BusinessDevicesType">
+		<xsd:sequence>
+			<xsd:element name="businessDevice" type="m2m_sdata_s1t:BusinessDeviceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>		
+    <xsd:simpleType name="AggregatorType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Max"/>
+            <xsd:enumeration value="Min"/>
+            <xsd:enumeration value="Average"/>
+            <xsd:enumeration value="Count"/>
+			<xsd:enumeration value="Sum"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+	<xsd:complexType name="AggregatorExtendedType">
+    	<xsd:simpleContent>
+        	<xsd:extension base="xsd:string">
+				<xsd:attribute name="aggregator" type="m2m_sdata_s1t:AggregatorType" use="optional"/>
+            </xsd:extension>
+		</xsd:simpleContent>
+    </xsd:complexType>  
+    
+    <xsd:complexType name="AttributesType">
+		<xsd:sequence>
+            <xsd:element name="name" type="m2m_sdata_s1t:AggregatorExtendedType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>    
+		
+	<xsd:complexType name="ServiceAttributesType">
+		<xsd:sequence>
+			<xsd:element name="businessDevice" type="m2m_sdata_s1t:AttributesType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="detailedNotice" type="m2m_sdata_s1t:AttributesType" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	  	
+	<xsd:complexType name="AvPairType">
+		<xsd:sequence>
+			<xsd:element name="name" type="m2m_sdata_s1t:AggregatorExtendedType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="DataType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Integer"/>
+			<xsd:enumeration value="String"/>
+			<xsd:enumeration value="Float"/>
+			<xsd:enumeration value="SerialNumber"/>
+			<xsd:enumeration value="Time"/>
+			<xsd:enumeration value="Date"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="TypedAvPairType"> 
+    	<xsd:complexContent> 
+			<xsd:extension base="m2m_sdata_s1t:AvPairType"> 
+			<xsd:sequence>
+				<xsd:element name="type" type="m2m_sdata_s1t:DataType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+			</xsd:extension> 
+	</xsd:complexContent> 
+	</xsd:complexType>  				
+			 
+	<xsd:complexType name="FilterAvPairType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="operator" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="FilterAttributesType">
+		<xsd:sequence>
+			<xsd:element name="attribute" type="m2m_sdata_s1t:FilterAvPairType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:complexType name="FromToType">
+		<xsd:sequence>
+			<xsd:element name="from" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="to" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="FilterType">
+		<xsd:sequence>
+			<xsd:element name="from" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="to" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="attributes" type="m2m_sdata_s1t:FilterAttributesType" minOccurs="0" maxOccurs="1"/> 
+		</xsd:sequence>
+	</xsd:complexType>
+    
+   	<xsd:complexType name="FilterAccumulateDateType">
+		<xsd:sequence>
+			<xsd:element name="from" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="to" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="dateAttributeName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+    
+    <xsd:complexType name="MeasureDataType">
+		<xsd:sequence>
+			<xsd:element name="attribute" type="m2m_sdata_s1t:AvPairType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+       
+	<xsd:complexType name="MeasureType">
+		<xsd:sequence>
+			<xsd:element name="date" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="data" type="m2m_sdata_s1t:MeasureDataType" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="MeasuresFilterType">
+		<xsd:sequence>
+			<xsd:element name="filter" type="m2m_sdata_s1t:FilterType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="attributes" type="m2m_sdata_s1t:AttributesType" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AccumulatedMeasuresFilterType">
+		<xsd:sequence>
+			<xsd:element name="filter" type="m2m_sdata_s1t:FromToType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="detailedNoticeAttribute" type="m2m_sdata_s1t:AttributesType" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	                                                         
+	<xsd:complexType name="AccumulatedMeasurementsType">                                                                               
+		<xsd:sequence>                                                                               
+			<xsd:element name="accumulatedMeasurement" type="m2m_sdata_s1t:MeasureType" minOccurs="0" maxOccurs="unbounded"/>   
+		</xsd:sequence>                                                                              
+	</xsd:complexType>                             
+		                                              
+	<xsd:complexType name="AccumulatedMeasurementsFilterType">                                                                               
+		<xsd:sequence>                                                                               
+			<xsd:element name="businessDeviceAttribute" type="m2m_sdata_s1t:AvPairType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="filterDate" type="m2m_sdata_s1t:FilterAccumulateDateType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="interval" type="m2m_sdata_s1t:IntervalType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="attributes" type="m2m_sdata_s1t:AttributesType" minOccurs="1" maxOccurs="unbounded"/> 
+		</xsd:sequence>                                                                              
+	</xsd:complexType>                                                                                                                             
+					                    
+	<xsd:complexType name="LocationType">
+		<xsd:sequence>
+			<xsd:element name="latitude" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="longitude" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+    
+    <xsd:simpleType name="IntervalType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hour"/>
+			<xsd:enumeration value="Day"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+  
+	<!-- Types of operations -->
+	<xsd:element name="getDevicesByLogicalGroup">
+		<xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="logicalGroup" type="m2m_sdata_s1t:LogicalGroupIdType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDevicesByLogicalGroupResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="device" type="m2m_sdata_s1t:DeviceType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDataByService">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+				<xsd:choice>
+					<xsd:element name="devices" type="xsd:anyType"/>						
+					<xsd:element name="concentrators" type="xsd:anyType"/>
+					<xsd:element name="logicalGroups" type="xsd:anyType"/>
+					<xsd:element name="businessDevices" type="xsd:anyType"/>
+					<xsd:element name="serviceAttributes" type="xsd:anyType"/>						
+                    <xsd:element name="accumulatedMeasurements" type="m2m_sdata_s1t:AccumulatedMeasurementsFilterType"/>                                                     
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDataByServiceResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+				<xsd:choice>
+					<xsd:element name="devices" type="m2m_sdata_s1t:DevicesType"/>					
+					<xsd:element name="concentrators" type="m2m_sdata_s1t:ConcentratorsType"/>								
+					<xsd:element name="logicalGroups" type="m2m_sdata_s1t:LogicalGroupsType"/>
+					<xsd:element name="businessDevices" type="m2m_sdata_s1t:BusinessDevicesType"/>
+					<xsd:element name="serviceAttributes" type="m2m_sdata_s1t:ServiceAttributesType"/>
+					<xsd:element name="accumulatedMeasurements" type="m2m_sdata_s1t:AccumulatedMeasurementsType"/>                   
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDeviceData">
+		<xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="device" type="m2m_sdata_s1t:DeviceIdType" minOccurs="1" maxOccurs="1"/>
+				<xsd:choice>
+					<xsd:element name="sensorML" type="xsd:anyType"/>
+					<xsd:element name="lastMeasure" type="xsd:anyType"/>
+					<xsd:element name="measures" type="m2m_sdata_s1t:MeasuresFilterType"/>
+					<xsd:element name="accumulatedMeasurements" type="m2m_sdata_s1t:AccumulatedMeasuresFilterType"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDeviceDataResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>                
+				<xsd:element name="device" type="m2m_sdata_s1t:DeviceIdType" minOccurs="1" maxOccurs="1"/>
+				<xsd:choice>
+					<xsd:element name="sensorML" type="xsd:string"/>
+					<xsd:element name="measure" type="m2m_sdata_s1t:MeasureType" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="accumulatedMeasurements" type="m2m_sdata_s1t:AccumulatedMeasurementsType"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getConcentratorData">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>                
+				<xsd:element name="concentratorID" type="m2m_sdata_s1t:ConcentratorIdType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getConcentratorDataResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>                
+				<xsd:element name="concentrator" type="m2m_sdata_s1t:ConcentratorType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>    
+    <xsd:element name="addDataByService">
+		<xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+                <xsd:choice>               
+				    <xsd:element name="sims" type="m2m_sdata_s1t:SimsType"/>     
+                    <xsd:element name="universalConcentrators" type="m2m_sdata_s1t:UniversalConcentratorsType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="m2m_sdata_s1t:NetAuthenticationProfilesType"/>     
+                    <xsd:element name="businessDevices" type="m2m_sdata_s1t:BusinessDevicesType"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>              	
+    <xsd:element name="addDataByServiceResponse">
+		<xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>
+                <xsd:choice>
+    				<xsd:element name="sims" type="xsd:anyType"/>
+                    <xsd:element name="universalConcentrators" type="xsd:anyType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="xsd:anyType"/>
+                    <xsd:element name="businessDevices" type="xsd:anyType"/>
+			    </xsd:choice>
+    		    <xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			    <xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>        
+            </xsd:sequence>
+    	</xsd:complexType>
+	</xsd:element>      
+    <xsd:element name="updateDataByService">        
+		<xsd:complexType>        
+            <xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>          
+                <xsd:choice>                
+                	<xsd:element name="sims" type="m2m_sdata_s1t:SimsType"/>     
+                    <xsd:element name="universalConcentrators" type="m2m_sdata_s1t:UniversalConcentratorsType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="m2m_sdata_s1t:NetAuthenticationProfilesType"/>     
+                    <xsd:element name="businessDevices" type="m2m_sdata_s1t:BusinessDevicesType"/>
+                </xsd:choice>
+            </xsd:sequence>            
+        </xsd:complexType>
+	</xsd:element>
+    
+	<xsd:element name="updateDataByServiceResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>          
+                <xsd:choice>
+    				<xsd:element name="sims" type="xsd:anyType"/>
+                    <xsd:element name="universalConcentrators" type="xsd:anyType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="xsd:anyType"/>
+                    <xsd:element name="businessDevicess" type="xsd:anyType"/>
+                </xsd:choice>
+                <xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			    <xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>        
+            </xsd:sequence>
+        </xsd:complexType>        
+    </xsd:element>
+        
+	<xsd:element name="deleteDataByService">
+        <xsd:complexType>        
+            <xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>          
+                <xsd:choice>                                
+                   	<xsd:element name="sims" type="m2m_sdata_s1t:SimsType"/>     
+                    <xsd:element name="universalConcentrators" type="m2m_sdata_s1t:UniversalConcentratorsType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="m2m_sdata_s1t:NetAuthenticationProfilesType"/>     
+                    <xsd:element name="businessDevices" type="m2m_sdata_s1t:BusinessDevicesType"/>                               
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+	</xsd:element>
+    
+	<xsd:element name="deleteDataByServiceResponse">
+        <xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="serviceID" type="m2m_sdata_s1t:ServiceIdType" minOccurs="0" maxOccurs="1"/>          
+                <xsd:choice>
+                    <xsd:element name="sims" type="xsd:anyType"/>
+                    <xsd:element name="universalConcentrators" type="xsd:anyType"/>
+                    <xsd:element name="netAuthenticationProfiles" type="xsd:anyType"/>
+                    <xsd:element name="businessDevices" type="xsd:anyType"/>
+                </xsd:choice>
+                <xsd:element name="errorCode" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			    <xsd:element name="errorText" type="xsd:string" minOccurs="1" maxOccurs="1"/>        
+            </xsd:sequence>
+        </xsd:complexType>        
+    </xsd:element>    
+</xsd:schema>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- January, 2011 -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:m2m_customer_s1="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/customer/v1/services" xmlns:m2m_customer_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/customer/v1/types" xmlns:uch="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" xmlns:ucf="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" xmlns:utih="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/customer/v1/services">
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" location="UNICA_API_SOAP_common_faults_v1_0.wsdl"/>
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" location="UNICA_API_SOAP_common_security_headers_v1_0.wsdl"/>
+    <wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" location="UNICA_API_SOAP_common_transaction_info_header_v2_0.wsdl"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/v1/" elementFormDefault="qualified">
+			<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/customer/v1/types" schemaLocation="UNICA_API_SOAP_m2m_customer_types_v1_1.xsd"/>
+		</xsd:schema>
+	</wsdl:types>       
+	<wsdl:message name="AddCustomerRequest">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:addCustomer"/>
+	</wsdl:message>
+	<wsdl:message name="AddCustomerResponse">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:addCustomerResponse"/>
+	</wsdl:message>    
+    <wsdl:message name="UpdateCustomerRequest">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:updateCustomer"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateCustomerResponse">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:updateCustomerResponse"/>
+	</wsdl:message>    
+    <wsdl:message name="DeleteCustomerRequest">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:deleteCustomer"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCustomerResponse">
+		<wsdl:part name="parameters" element="m2m_customer_s1t:deleteCustomerResponse"/>
+	</wsdl:message>
+    <wsdl:portType name="CustomerPort">
+		<wsdl:operation name="addCustomer">
+			<wsdl:input message="m2m_customer_s1:AddCustomerRequest"/>
+			<wsdl:output message="m2m_customer_s1:AddCustomerResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>        
+        <wsdl:operation name="updateCustomer">
+			<wsdl:input message="m2m_customer_s1:UpdateCustomerRequest"/>
+			<wsdl:output message="m2m_customer_s1:UpdateCustomerResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>
+        <wsdl:operation name="deleteCustomer">
+			<wsdl:input message="m2m_customer_s1:DeleteCustomerRequest"/>
+			<wsdl:output message="m2m_customer_s1:DeleteCustomerResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>       
+	</wsdl:portType>
+    
+    
+	<wsdl:binding name="CustomerSOAPBinding" type="m2m_customer_s1:CustomerPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="addCustomer">
+			<soap:operation soapAction="urn:addCustomer"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+        <wsdl:operation name="updateCustomer">
+			<soap:operation soapAction="urn:updateCustomer"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>     
+        <wsdl:operation name="deleteCustomer">
+			<soap:operation soapAction="urn:deleteCustomer"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="M2MCustomerService">
+		<wsdl:port name="Customer" binding="m2m_customer_s1:CustomerSOAPBinding">
+			<soap:address location="http://localhost/UNICA_SDP/M2M/Customer"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

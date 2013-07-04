@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<Modelsindex>
+	<metaEntry>
+		<metaFilename>WLABRoofLessMeta.xml</metaFilename>
+		<modelFilename>WLABRoofLess.kml</modelFilename>
+		<gatewayList>
+			<gateway>
+				<id>vitrogw_wlab</id>
+				<name>WLAB island</name>
+				<defaultInterface>0</defaultInterface>
+			</gateway>
+		</gatewayList>
+	</metaEntry>
+	<metaEntry>
+		<metaFilename>CTIRooflessMeta.xml</metaFilename>
+		<modelFilename>CTIRoofless.kml</modelFilename>
+		<gatewayList>
+			<gateway>
+				<id>vitrogw_cti</id>
+				<name>CTI island</name>
+				<defaultInterface>0</defaultInterface>
+			</gateway>
+		</gatewayList>
+	</metaEntry>
+	<metaEntry>
+		<metaFilename>CloseToHaiRoofLessMeta.xml</metaFilename>
+		<modelFilename>CloseToHaiRoofLess.kml</modelFilename>
+		<gatewayList>
+			<gateway>
+				<id>vitrogw_hai</id>
+				<name>HAI island</name>
+				<defaultInterface>0</defaultInterface>
+			</gateway>
+            <gateway>
+                <id>vitrogw_hai2</id>
+                <name>HAI island 2</name>
+                <defaultInterface>1</defaultInterface>
+            </gateway>
+            <gateway>
+                <id>vitrogw_hai3</id>
+                <name>HAI island 3</name>
+                <defaultInterface>2</defaultInterface>
+            </gateway>
+        </gatewayList>
+	</metaEntry>
+	<metaEntry>
+		<metaFilename>ThalesRooflessMeta.xml</metaFilename>
+		<modelFilename>ThalesRoofless.kml</modelFilename>
+		<gatewayList>
+			<gateway>
+				<id>vitrogw_tcs</id>
+				<name>TCS island</name>
+				<defaultInterface>0</defaultInterface>
+			</gateway>
+		</gatewayList>
+	</metaEntry>
+    <metaEntry>
+        <metaFilename>SSILaurentinaRooflessMeta.xml</metaFilename>
+        <modelFilename>SSILaurentinaRoofless.kml</modelFilename>
+        <gatewayList>
+            <gateway>
+                <id>vitrogw_ssi</id>
+                <name>SSI island</name>
+                <defaultInterface>0</defaultInterface>
+            </gateway>
+        </gatewayList>
+    </metaEntry>
+    <metaEntry>
+        <metaFilename>TIDBarcelonaRooflessMeta.xml</metaFilename>
+        <modelFilename>TIDBarcelonaRoofless.kml</modelFilename>
+        <gatewayList>
+            <gateway>
+                <id>vitrogw_tid</id>
+                <name>TID island</name>
+                <defaultInterface>0</defaultInterface>
+            </gateway>
+        </gatewayList>
+    </metaEntry>
+</Modelsindex>

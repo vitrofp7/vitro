@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ #--------------------------------------------------------------------------
+  ~ # Copyright (c) 2013 VITRO FP7 Consortium.
+  ~ # All rights reserved. This program and the accompanying materials
+  ~ # are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  ~ # http://www.gnu.org/licenses/lgpl-3.0.html
+  ~ #
+  ~ # Contributors:
+  ~ #     Antoniou Thanasis
+  ~ #     Paolo Medagliani
+  ~ #     D. Davide Lamanna
+  ~ #     Panos Trakadas
+  ~ #     Andrea Kropp
+  ~ #     Kiriakos Georgouleas
+  ~ #     Panagiotis Karkazis
+  ~ #     David Ferrer Figueroa
+  ~ #     Francesco Ficarola
+  ~ #     Stefano Puglia
+  ~ #--------------------------------------------------------------------------
+  -->
+
+<gml:Dictionary gml:id="Unidades" xsi:schemaLocation="http://www.opengis.net/gml ../schemas/gml/3.1.1/base/units.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<gml:name>Diccionario de unidades</gml:name>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="kilogram">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:kilogram</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:0</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:mass</gml:quantityType>
+			<gml:catalogSymbol>kg</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="meter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:meter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:1</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:length</gml:quantityType>
+			<gml:catalogSymbol>m</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="second">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:second</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:2</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:time</gml:quantityType>
+			<gml:catalogSymbol>s</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="inch">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:inch</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:3</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:length</gml:quantityType>
+			<gml:catalogSymbol>[in_i]</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:meter">
+				<gml:factor>0.0254</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="centimeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:centimeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:4</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:length</gml:quantityType>
+			<gml:catalogSymbol>cm</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:meter">
+				<gml:factor>0.01</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="gram">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:gram</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:5</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:mass</gml:quantityType>
+			<gml:catalogSymbol>g</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:kilogram">
+				<gml:factor>0.001</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="pound">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:pound</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:6</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:mass</gml:quantityType>
+			<gml:catalogSymbol>[lb_av]</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:gram">
+				<gml:factor>453.59237</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="ampere">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:ampere</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:7</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:electricCurrent</gml:quantityType>
+			<gml:catalogSymbol>A</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="kelvin">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:kelvin</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:8</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:temperature</gml:quantityType>
+			<gml:catalogSymbol>K</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="mole">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:mole</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:9</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:amountOfSubstance</gml:quantityType>
+			<gml:catalogSymbol>mol</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="candela">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:candela</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:10</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:luminousIntensity</gml:quantityType>
+			<gml:catalogSymbol>cd</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="percent">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:percent</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:11</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:concentration</gml:quantityType>
+			<gml:catalogSymbol>%</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="celsius">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:celsius</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:12</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:temperature</gml:quantityType>
+			<gml:catalogSymbol>Cel</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:kelvin">
+				<gml:factor>274.15</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="metersPerSecond">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:metersPerSecond</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:13</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:velocity</gml:quantityType>
+			<gml:catalogSymbol>m/s</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:meter" exponent="1"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:second" exponent="-1"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="kilometersPerHour">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:kilometersPerHour</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:14</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:velocity</gml:quantityType>
+			<gml:catalogSymbol>km/h</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:kilometer" exponent="1"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:hour" exponent="-1"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="hour">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:hour</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:15</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:time</gml:quantityType>
+			<gml:catalogSymbol>h</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:second">
+				<gml:factor>3600</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="pascal">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:pascal</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:16</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:pressure</gml:quantityType>
+			<gml:catalogSymbol>Pa</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="hectoPascal">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:hectoPascal</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:17</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:pressure</gml:quantityType>
+			<gml:catalogSymbol>hPa</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:pascal">
+				<gml:factor>100</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="millimetersPerSquareMeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:millimetersPerSquareMeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:18</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:rainfall</gml:quantityType>
+			<gml:catalogSymbol>mm/m2</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="millimeters">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:millimeters</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:19</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:rainfall</gml:quantityType>
+			<gml:catalogSymbol>mm</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="partsPerMillion">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:partsPerMillion</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:20</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:concentration</gml:quantityType>
+			<gml:catalogSymbol>[ppm]</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="partsPerBillion">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:partsPerBillion</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:21</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:concentration</gml:quantityType>
+			<gml:catalogSymbol>[ppb]</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="watt">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:watt</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:22</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:power</gml:quantityType>
+			<gml:catalogSymbol>W</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="kilowatt">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:kilowatt</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:23</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:power</gml:quantityType>
+			<gml:catalogSymbol>kW</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:kilowatt">
+				<gml:factor>1000</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="volt">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:volt</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:24</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:electricPotential</gml:quantityType>
+			<gml:catalogSymbol>V</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="wattsPerSquareCentimeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:wattsPerSquareCentimeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:25</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:radiation</gml:quantityType>
+			<gml:catalogSymbol>W/cm2</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:watt" exponent="1"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:centimeter" exponent="-2"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="milliwattsPerSquareCentimeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:milliwattsPerSquareCentimeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:26</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:radiation</gml:quantityType>
+			<gml:catalogSymbol>mW/cm2</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:watt" exponent="-3"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:centimeter" exponent="-2"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="wattsPerSquareMeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:wattsPerSquareMeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:27</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:radiation</gml:quantityType>
+			<gml:catalogSymbol>W/m2</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:watt" exponent="1"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:meter" exponent="-2"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="metersPerSquareSecond">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:metersPerSquareSecond</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:28</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:acceleration</gml:quantityType>
+			<gml:catalogSymbol>m/s2</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:meter" exponent="1"/>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:second" exponent="-2"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:ConventionalUnit gml:id="gForce">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:gForce</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:29</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:acceleration</gml:quantityType>
+			<gml:catalogSymbol>g</gml:catalogSymbol>
+			<gml:conversionToPreferredUnit uom="urn:x-ogc:def:uom:IDAS:1.0:metersPerSquareSecond">
+				<gml:factor>9.80665</gml:factor>
+			</gml:conversionToPreferredUnit>
+		</gml:ConventionalUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="decibel">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:decibel</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:30</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:sound</gml:quantityType>
+			<gml:catalogSymbol>dB</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="degree">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:degree</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:31</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:angle</gml:quantityType>
+			<gml:catalogSymbol>deg</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="dimensionless">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:dimensionless</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:32</gml:name>
+			<gml:quantityType></gml:quantityType>
+			<gml:catalogSymbol></gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="poundPerSquareInch">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:poundPerSquareInch</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:33</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:pressure</gml:quantityType>
+			<gml:catalogSymbol>[psi]</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="cubicMeter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:cubicMeter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:34</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:volume</gml:quantityType>
+			<gml:catalogSymbol>m3</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="joule">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:joule</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:35</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:energy</gml:quantityType>
+			<gml:catalogSymbol>J</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="kWh">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:kilowattPerHour</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:36</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:energy</gml:quantityType>
+			<gml:catalogSymbol>kWh</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="Wh">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:wattPerHour</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:37</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:energy</gml:quantityType>
+			<gml:catalogSymbol>Wh</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="euro">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:euro</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:38</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:currency</gml:quantityType>
+			<gml:catalogSymbol>EUR</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="dollar">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:dollar</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:39</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:currency</gml:quantityType>
+			<gml:catalogSymbol>USD</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+
+<!-- Frecuency Unit -->
+	<gml:dictionaryEntry>
+		<gml:DerivedUnit gml:id="hertz">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:hertz</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:40</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:frecuency</gml:quantityType>
+			<gml:catalogSymbol>Hz</gml:catalogSymbol>
+			<gml:derivationUnitTerm uom="urn:x-ogc:def:uom:IDAS:1.0:second" exponent="-1"/>
+		</gml:DerivedUnit>
+	</gml:dictionaryEntry>
+
+<!-- Units Health Phenomena -->
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="millimeterOfMercury">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:millimeterOfMercury</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:41</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:pressure</gml:quantityType>
+			<gml:catalogSymbol>mm[Hg]</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="heartBeatPerMinute">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:heartBeatPerMinute</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:42</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:frecuency</gml:quantityType>
+			<gml:catalogSymbol>{H.B.}/min</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="milligramPerDeciliter">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:milligramPerDeciliter</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:43</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:concentration</gml:quantityType>
+			<gml:catalogSymbol>mg/dL</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="millisecond">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:millisecond</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:44</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:time</gml:quantityType>
+			<gml:catalogSymbol>mg/dL</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+	<gml:dictionaryEntry>
+		<gml:BaseUnit gml:id="lumen">
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:lumen</gml:name>
+			<gml:name>urn:x-ogc:def:uom:IDAS:1.0:45</gml:name>
+			<gml:quantityType>urn:x-ogc:def:phenomenon:IDAS:1.0:luminousFlux</gml:quantityType>
+			<gml:catalogSymbol>lm</gml:catalogSymbol>
+			<gml:unitsSystem xlink:href="si"/>
+		</gml:BaseUnit>
+	</gml:dictionaryEntry>
+
+</gml:Dictionary>

@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" >
+<Document>
+  <name>ThalesRoofless</name>
+<Placemark>
+  <name></name>
+  <description></description>
+  <Style>
+    <LineStyle>
+      <color>99dec4b0</color>
+      <colorMode>normal</colorMode>
+      <width>1</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>99dec4b0</color>
+      <colorMode>normal</colorMode>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <MultiGeometry>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25508695677215,48.9332018266884,-0.241417624081245
+2.25508695677215,48.9332018266884,33.2550553103029
+2.25510199563405,48.9331943769055,33.2550553103029
+2.25510199563405,48.9331943769055,-0.255030254262722
+2.25508695677215,48.9332018266884,-0.241417624081245
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25503218861914,48.9332043357125,-0.21873661216536
+2.25503218861914,48.9332043357125,33.2550553103029
+2.25505055787707,48.9332070194269,33.2550553103029
+2.25505055787707,48.9332070194269,-0.222493331949253
+2.25503218861914,48.9332043357125,-0.21873661216536
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25465572368027,48.9335078139725,0.481674372000296
+2.25465572368027,48.9335078139725,33.2550553103029
+2.25467623628982,48.9335098881657,33.2550553103029
+2.25467623628982,48.9335098881657,0.471268701298383
+2.25465572368027,48.9335078139725,0.481674372000296
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25501572958816,48.9331983289028,-0.221826318122277
+2.25501572958816,48.9331983289028,33.2550553103029
+2.25503218861914,48.9332043357125,33.2550553103029
+2.25503218861914,48.9332043357125,-0.21873661216536
+2.25501572958816,48.9331983289028,-0.221826318122277
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25506932802145,48.933206159534,-0.23026656905665
+2.25506932802145,48.933206159534,33.2550553103029
+2.25508695677215,48.9332018266884,33.2550553103029
+2.25508695677215,48.9332018266884,-0.241417624081245
+2.25506932802145,48.933206159534,-0.23026656905665
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25505055787707,48.9332070194269,-0.222493331949253
+2.25505055787707,48.9332070194269,33.2550553103029
+2.25506932802145,48.933206159534,33.2550553103029
+2.25506932802145,48.933206159534,-0.23026656905665
+2.25505055787707,48.9332070194269,-0.222493331949253
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25486254314315,48.9330213279905,-0.234509119526104
+2.25486254314315,48.9330213279905,33.2550553103029
+2.25476317744234,48.9328760929279,33.2550553103029
+2.25476317744234,48.9328760929279,-0.196585542948399
+2.25486254314315,48.9330213279905,-0.234509119526104
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25510199563405,48.9331943769055,-0.255030254262722
+2.25510199563405,48.9331943769055,33.2550553103029
+2.25511320891599,48.9331844223088,33.2550553103029
+2.25511320891599,48.9331844223088,-0.269985957914456
+2.25510199563405,48.9331943769055,-0.255030254262722
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25433327183859,48.9330756243873,-0.378791785461042
+2.25433327183859,48.9330756243873,33.2550553103029
+2.25432966391895,48.9330890042034,33.2550553103029
+2.25432966391895,48.9330890042034,-0.369048900253987
+2.25433327183859,48.9330756243873,-0.378791785461042
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25458117479563,48.9333852485573,0.268210982164633
+2.25458117479563,48.9333852485573,33.2550553103029
+2.25439894879551,48.9334393666871,33.2550553103029
+2.25439894879551,48.9334393666871,0.515693306196102
+2.25458117479563,48.9333852485573,0.268210982164633
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25482692934604,48.9334421325622,0.218375769649536
+2.25482692934604,48.9334421325622,33.2550553103029
+2.25474404056014,48.9334667494047,33.2550553103029
+2.25474404056014,48.9334667494047,0.327657078700026
+2.25482692934604,48.9334421325622,0.218375769649536
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25427669220377,48.9332606722366,0.0938893616108281
+2.25427669220377,48.9332606722366,33.2550553103029
+2.25444207981198,48.9331988007642,33.2550553103029
+2.25444207981198,48.9331988007642,-0.119201515306962
+2.25427669220377,48.9332606722366,0.0938893616108281
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25510745605729,48.9331375170508,-0.319124453578109
+2.25511667559422,48.9331483234149,-0.310252994840437
+2.25511667559422,48.9331483234149,33.2550553103029
+2.25510745605729,48.9331375170508,33.2550553103029
+2.25510745605729,48.9331375170508,-0.319124453578109
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25515403466943,48.9334172128948,-0.0331081282574843
+2.25515403466943,48.9334172128948,33.2550553103029
+2.25486800019319,48.9335021619092,33.2550553103029
+2.25486800019319,48.9335021619092,0.295322625832795
+2.25515403466943,48.9334172128948,-0.0331081282574843
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25438936163874,48.9331376299581,-0.263395250736604
+2.25444207981198,48.9331988007642,-0.119201515306962
+2.25444207981198,48.9331988007642,33.2550553103029
+2.25438936163874,48.9331376299581,33.2550553103029
+2.25438936163874,48.9331376299581,-0.263395250736604
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25486800019319,48.9335021619092,0.295322625832795
+2.25486800019319,48.9335021619092,33.2550553103029
+2.25482692934604,48.9334421325622,33.2550553103029
+2.25482692934604,48.9334421325622,0.218375769649536
+2.25486800019319,48.9335021619092,0.295322625832795
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25439894879551,48.9334393666871,0.515693306196102
+2.25439894879551,48.9334393666871,33.2550553103029
+2.25427669220377,48.9332606722366,33.2550553103029
+2.25427669220377,48.9332606722366,0.0938893616108281
+2.25439894879551,48.9334393666871,0.515693306196102
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25509396229006,48.9331288778466,-0.323647831796402
+2.25510745605729,48.9331375170508,-0.319124453578109
+2.25510745605729,48.9331375170508,33.2550553103029
+2.25509396229006,48.9331288778466,33.2550553103029
+2.25509396229006,48.9331288778466,-0.323647831796402
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25474013382193,48.9334801778233,0.359836728454448
+2.25474013382193,48.9334801778233,33.2550553103029
+2.2547302551073,48.9334922022323,33.2550553103029
+2.2547302551073,48.9334922022323,0.3927611998237
+2.25474013382193,48.9334801778233,0.359836728454448
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25498315455115,48.9329855075374,-0.11920151530696
+2.25507730302763,48.9331231156541,-0.33136353644446
+2.25507730302763,48.9331231156541,33.2550553103029
+2.25498315455115,48.9329855075374,33.2550553103029
+2.25498315455115,48.9329855075374,-0.11920151530696
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25474404056014,48.9334667494047,0.327657078700026
+2.25474404056014,48.9334667494047,33.2550553103029
+2.25474013382193,48.9334801778233,33.2550553103029
+2.25474013382193,48.9334801778233,0.359836728454448
+2.25474404056014,48.9334667494047,0.327657078700026
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25486254314315,48.9330213279905,-0.234509119526104
+2.25498315455115,48.9329855075374,-0.11920151530696
+2.25498315455115,48.9329855075374,33.2550553103029
+2.25486254314315,48.9330213279905,33.2550553103029
+2.25486254314315,48.9330213279905,-0.234509119526104
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25434244977217,48.933063454543,-0.387653596062469
+2.25434244977217,48.933063454543,33.2550553103029
+2.25433327183859,48.9330756243873,33.2550553103029
+2.25433327183859,48.9330756243873,-0.378791785461042
+2.25434244977217,48.933063454543,-0.387653596062469
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25439412254528,48.9330430926022,-0.402480700490331
+2.25439412254528,48.9330430926022,33.2550553103029
+2.25437415697178,48.9330465033554,33.2550553103029
+2.25437415697178,48.9330465033554,-0.399997071126404
+2.25439412254528,48.9330430926022,-0.402480700490331
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25441473803514,48.9330435221828,-0.402167881456077
+2.25441473803514,48.9330435221828,33.2550553103029
+2.25439412254528,48.9330430926022,33.2550553103029
+2.25439412254528,48.9330430926022,-0.402480700490331
+2.25441473803514,48.9330435221828,-0.402167881456077
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25438936163874,48.9331376299581,-0.263395250736604
+2.25438936163874,48.9331376299581,33.2550553103029
+2.25436978309654,48.9331333547473,33.2550553103029
+2.25436978309654,48.9331333547473,-0.275847722353119
+2.25438936163874,48.9331376299581,-0.263395250736604
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25432966391895,48.9330890042034,-0.369048900253987
+2.25432966391895,48.9330890042034,33.2550553103029
+2.25433191773695,48.9331025121631,33.2550553103029
+2.25433191773695,48.9331025121631,-0.359212704125982
+2.25432966391895,48.9330890042034,-0.369048900253987
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25511320891599,48.9331844223088,-0.269985957914456
+2.25511320891599,48.9331844223088,33.2550553103029
+2.25511967526333,48.9331727808336,33.2550553103029
+2.25511967526333,48.9331727808336,-0.283538974218114
+2.25511320891599,48.9331844223088,-0.269985957914456
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25511967526333,48.9331727808336,-0.283538974218114
+2.25511967526333,48.9331727808336,33.2550553103029
+2.25512086336209,48.9331604090195,33.2550553103029
+2.25512086336209,48.9331604090195,-0.297052295209085
+2.25511967526333,48.9331727808336,-0.283538974218114
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25461917481989,48.9334407901223,0.364787784156311
+2.25461917481989,48.9334407901223,33.2550553103029
+2.25461067596366,48.93345326385,33.2550553103029
+2.25461067596366,48.93345326385,0.395310557398511
+2.25461917481989,48.9334407901223,0.364787784156311
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25512086336209,48.9331604090195,-0.297052295209085
+2.25512086336209,48.9331604090195,33.2550553103029
+2.25511667559422,48.9331483234149,33.2550553103029
+2.25511667559422,48.9331483234149,-0.310252994840437
+2.25512086336209,48.9331604090195,-0.297052295209085
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25461917481989,48.9334407901223,33.2550553103029
+2.25461917481989,48.9334407901223,0.364787784156311
+2.25458117479563,48.9333852485573,0.268210982164633
+2.25458117479563,48.9333852485573,33.2550553103029
+2.25461917481989,48.9334407901223,33.2550553103029
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25462215955168,48.9334922792337,0.472178867015731
+2.25462215955168,48.9334922792337,33.2550553103029
+2.25463711916204,48.9335017558094,33.2550553103029
+2.25463711916204,48.9335017558094,0.481987504676109
+2.25462215955168,48.9334922792337,0.472178867015731
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25509396229006,48.9331288778466,-0.323647831796402
+2.25509396229006,48.9331288778466,33.2550553103029
+2.25507730302763,48.9331231156541,33.2550553103029
+2.25507730302763,48.9331231156541,-0.33136353644446
+2.25509396229006,48.9331288778466,-0.323647831796402
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25461067596366,48.93345326385,0.395310557398511
+2.25461067596366,48.93345326385,33.2550553103029
+2.254608290592,48.933466846106,33.2550553103029
+2.254608290592,48.933466846106,0.426718427463455
+2.25461067596366,48.93345326385,0.395310557398511
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25502279818747,48.9332253980757,33.2550553103029
+2.25502279818747,48.9332253980757,-0.192311951958919
+2.25515403466943,48.9334172128948,-0.0331081282574843
+2.25515403466943,48.9334172128948,33.2550553103029
+2.25502279818747,48.9332253980757,33.2550553103029
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.254608290592,48.933466846106,0.426718427463455
+2.254608290592,48.933466846106,33.2550553103029
+2.25461224139475,48.9334802689272,33.2550553103029
+2.25461224139475,48.9334802689272,0.453164138451707
+2.254608290592,48.933466846106,0.426718427463455
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25494382402152,48.9332248879489,-0.183138281569708
+2.25494382402152,48.9332248879489,33.2550553103029
+2.25501572958816,48.9331983289028,33.2550553103029
+2.25501572958816,48.9331983289028,-0.221826318122277
+2.25494382402152,48.9332248879489,-0.183138281569708
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25461224139475,48.9334802689272,0.453164138451707
+2.25461224139475,48.9334802689272,33.2550553103029
+2.25462215955168,48.9334922792337,33.2550553103029
+2.25462215955168,48.9334922792337,0.472178867015731
+2.25461224139475,48.9334802689272,0.453164138451707
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25495745117163,48.9332448054779,33.2550553103029
+2.25495745117163,48.9332448054779,-0.154139867053972
+2.25502279818747,48.9332253980757,-0.192311951958919
+2.25502279818747,48.9332253980757,33.2550553103029
+2.25495745117163,48.9332448054779,33.2550553103029
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25463711916204,48.9335017558094,0.481987504676109
+2.25463711916204,48.9335017558094,33.2550553103029
+2.25465572368027,48.9335078139725,33.2550553103029
+2.25465572368027,48.9335078139725,0.481674372000296
+2.25463711916204,48.9335017558094,0.481987504676109
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25494382402152,48.9332248879489,33.2550553103029
+2.25494382402152,48.9332248879489,-0.183138281569708
+2.25495745117163,48.9332448054779,-0.154139867053972
+2.25495745117163,48.9332448054779,33.2550553103029
+2.25494382402152,48.9332248879489,33.2550553103029
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25467623628982,48.9335098881657,0.471268701298383
+2.25467623628982,48.9335098881657,33.2550553103029
+2.25469674204372,48.9335077847533,33.2550553103029
+2.25469674204372,48.9335077847533,0.451741907662464
+2.25467623628982,48.9335098881657,0.471268701298383
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25469674204372,48.9335077847533,0.451741907662464
+2.25469674204372,48.9335077847533,33.2550553103029
+2.25471532663498,48.9335017000987,33.2550553103029
+2.25471532663498,48.9335017000987,0.424916903097808
+2.25469674204372,48.9335077847533,0.451741907662464
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25471532663498,48.9335017000987,0.424916903097808
+2.25471532663498,48.9335017000987,33.2550553103029
+2.2547302551073,48.9334922022323,33.2550553103029
+2.2547302551073,48.9334922022323,0.3927611998237
+2.25471532663498,48.9335017000987,0.424916903097808
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25476317744234,48.9328760929279,-0.196585542948399
+2.25476317744234,48.9328760929279,33.2550553103029
+2.25448847220281,48.9329576770928,33.2550553103029
+2.25448847220281,48.9329576770928,-0.421272629730808
+2.25476317744234,48.9328760929279,-0.196585542948399
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25448847220281,48.9329576770928,-0.421272629730808
+2.25448847220281,48.9329576770928,33.2550553103029
+2.25453055217239,48.9330191826956,33.2550553103029
+2.25453055217239,48.9330191826956,-0.357055850287353
+2.25448847220281,48.9329576770928,-0.421272629730808
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25453055217239,48.9330191826956,-0.357055850287353
+2.25453055217239,48.9330191826956,33.2550553103029
+2.25443433657481,48.933047757363,33.2550553103029
+2.25443433657481,48.933047757363,-0.395098510799077
+2.25453055217239,48.9330191826956,-0.357055850287353
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25433191773695,48.9331025121631,-0.359212704125982
+2.25433191773695,48.9331025121631,33.2550553103029
+2.25433985106395,48.9331150560763,33.2550553103029
+2.25433985106395,48.9331150560763,-0.329146472203491
+2.25433191773695,48.9331025121631,-0.359212704125982
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25436978309654,48.9331333547473,-0.275847722353119
+2.25436978309654,48.9331333547473,33.2550553103029
+2.25435282245186,48.9331256217003,33.2550553103029
+2.25435282245186,48.9331256217003,-0.298371861343066
+2.25436978309654,48.9331333547473,-0.275847722353119
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25435645563257,48.9330534786655,-0.394917807905114
+2.25435645563257,48.9330534786655,33.2550553103029
+2.25434244977217,48.933063454543,33.2550553103029
+2.25434244977217,48.933063454543,-0.387653596062469
+2.25435645563257,48.9330534786655,-0.394917807905114
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25433985106395,48.9331150560763,-0.329146472203491
+2.25433985106395,48.9331150560763,33.2550553103029
+2.25435282245186,48.9331256217003,33.2550553103029
+2.25435282245186,48.9331256217003,-0.298371861343066
+2.25433985106395,48.9331150560763,-0.329146472203491
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25443433657481,48.933047757363,-0.395098510799077
+2.25443433657481,48.933047757363,33.2550553103029
+2.25441473803514,48.9330435221828,33.2550553103029
+2.25441473803514,48.9330435221828,-0.402167881456077
+2.25443433657481,48.933047757363,-0.395098510799077
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <Polygon>
+    <extrude>0</extrude>
+    <tessellate>0</tessellate>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>
+2.25437415697178,48.9330465033554,-0.399997071126404
+2.25437415697178,48.9330465033554,33.2550553103029
+2.25435645563257,48.9330534786655,33.2550553103029
+2.25435645563257,48.9330534786655,-0.394917807905114
+2.25437415697178,48.9330465033554,-0.399997071126404
+        </coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+    <innerBoundaryIs>
+    </innerBoundaryIs>
+  </Polygon>
+  <LineString>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <coordinates>2.25439894879551,48.9334393666871,48.6156933061961 2.25439894721458,48.9334393695497,48.6017126652378    </coordinates>
+  </LineString>
+  <LineString>
+    <altitudeMode>relativeToGround</altitudeMode>
+    <coordinates>2.25494382402152,48.9332248879489,47.9168617184303 2.25494381244277,48.933224891273,47.8523587852642    </coordinates>
+  </LineString>
+  </MultiGeometry>
+</Placemark>
+
+</Document>
+</kml>

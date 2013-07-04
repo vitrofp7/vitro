@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2013 VITRO FP7 Consortium.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/lgpl-3.0.html
+  
+  Contributors:
+      Antoniou Thanasis
+      Paolo Medagliani
+      D. Davide Lamanna
+      Panos Trakadas
+      Andrea Kropp
+      Kiriakos Georgouleas
+      Panagiotis Karkazis
+      David Ferrer Figueroa
+      Francesco Ficarola
+      Stefano Puglia
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="EnableNodesResp" type="EnableNodesRespType"/>
+    <xs:complexType name="EnableNodesRespType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="message-type"/>
+            <xs:element type="xs:string" name="vgwId"/>
+            <xs:element type="confirmedEnabledNodesListType" name="confirmedEnabledNodesList"/>
+            <xs:element type="xs:string" name="timestamp"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="confirmedEnabledNodesListType">
+        <xs:sequence>
+            <xs:element type="confirmedEnabledNodesListItemType" name="confirmedEnabledNodesListItem" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="confirmedEnabledNodesListItemType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="nodeId"/>
+            <xs:element type="xs:string" name="status"/>
+            <xs:element type="xs:string" name="ofRemoteTimestamp"/>
+            <xs:element type="xs:string" name="gwInitFlag" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

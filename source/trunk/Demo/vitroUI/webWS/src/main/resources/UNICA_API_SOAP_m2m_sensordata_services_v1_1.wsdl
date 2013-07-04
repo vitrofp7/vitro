@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- January, 2011 -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:m2m_sdata_s1="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/sensordata/v1/services" xmlns:m2m_sdata_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/sensordata/v1/types" xmlns:uch="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" xmlns:ucf="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" xmlns:utih="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/sensordata/v1/services">
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/faults" location="UNICA_API_SOAP_common_faults_v1_0.wsdl"/>
+	<wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v1/security_headers" location="UNICA_API_SOAP_common_security_headers_v1_0.wsdl"/>
+    <wsdl:import namespace="http://www.telefonica.com/wsdl/UNICA/SOAP/common/v2/transaction_info_header" location="UNICA_API_SOAP_common_transaction_info_header_v2_0.wsdl"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.telefonica.com/wsdl/UNICA/SOAP/m2m/v1/" elementFormDefault="qualified">
+			<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/sensordata/v1/types" schemaLocation="UNICA_API_SOAP_m2m_sensordata_types_v1_1.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetDevicesByLogicalGroupRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDevicesByLogicalGroup"/>
+	</wsdl:message>
+	<wsdl:message name="GetDevicesByLogicalGroupResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDevicesByLogicalGroupResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDataByServiceRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDataByService"/>
+	</wsdl:message>
+	<wsdl:message name="GetDataByServiceResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDataByServiceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDeviceDataRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDeviceData"/>
+	</wsdl:message>
+	<wsdl:message name="GetDeviceDataResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getDeviceDataResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetConcentratorDataRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getConcentratorData"/>
+	</wsdl:message>
+	<wsdl:message name="GetConcentratorDataResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:getConcentratorDataResponse"/>
+	</wsdl:message>   
+    <wsdl:message name="AddDataByServiceRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:addDataByService"/>
+	</wsdl:message>    
+    <wsdl:message name="AddDataByServiceResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:addDataByServiceResponse"/>
+	</wsdl:message>
+    <wsdl:message name="UpdateDataByServiceRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:updateDataByService"/>
+	</wsdl:message>    
+    <wsdl:message name="UpdateDataByServiceResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:updateDataByServiceResponse"/>
+	</wsdl:message>    
+    <wsdl:message name="DeleteDataByServiceRequest">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:deleteDataByService"/>
+	</wsdl:message>    
+    <wsdl:message name="DeleteDataByServiceResponse">
+		<wsdl:part name="parameters" element="m2m_sdata_s1t:deleteDataByServiceResponse"/>
+	</wsdl:message>        
+	<wsdl:portType name="SensorDataPort">
+		<wsdl:operation name="getDevicesByLogicalGroup">
+			<wsdl:input message="m2m_sdata_s1:GetDevicesByLogicalGroupRequest"/>
+			<wsdl:output message="m2m_sdata_s1:GetDevicesByLogicalGroupResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDataByService">
+			<wsdl:input message="m2m_sdata_s1:GetDataByServiceRequest"/>
+			<wsdl:output message="m2m_sdata_s1:GetDataByServiceResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDeviceData">
+			<wsdl:input message="m2m_sdata_s1:GetDeviceDataRequest"/>
+			<wsdl:output message="m2m_sdata_s1:GetDeviceDataResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>
+		<wsdl:operation name="getConcentratorData">
+			<wsdl:input message="m2m_sdata_s1:GetConcentratorDataRequest"/>
+			<wsdl:output message="m2m_sdata_s1:GetConcentratorDataResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>        
+        <wsdl:operation name="addDataByService">
+			<wsdl:input message="m2m_sdata_s1:AddDataByServiceRequest"/>
+			<wsdl:output message="m2m_sdata_s1:AddDataByServiceResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>                
+        <wsdl:operation name="updateDataByService">
+			<wsdl:input message="m2m_sdata_s1:UpdateDataByServiceRequest"/>
+			<wsdl:output message="m2m_sdata_s1:UpdateDataByServiceResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>        
+        <wsdl:operation name="deleteDataByService">
+			<wsdl:input message="m2m_sdata_s1:DeleteDataByServiceRequest"/>
+			<wsdl:output message="m2m_sdata_s1:DeleteDataByServiceResponse"/>
+			<wsdl:fault name="ClientException" message="ucf:ClientException"/>
+			<wsdl:fault name="ServerException" message="ucf:ServerException"/>
+		</wsdl:operation>                
+	</wsdl:portType>
+	<wsdl:binding name="SensorDataSOAPBinding" type="m2m_sdata_s1:SensorDataPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getDevicesByLogicalGroup">
+			<soap:operation soapAction="urn:getDevicesByLogicalGroup"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDataByService">
+			<soap:operation soapAction="urn:getDataByService"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>                               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDeviceData">
+			<soap:operation soapAction="urn:getDeviceData"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>                               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getConcentratorData">
+			<soap:operation soapAction="urn:getConcentratorData"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>                               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>        
+        <wsdl:operation name="addDataByService">
+			<soap:operation soapAction="urn:addDataByService"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>                               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>                
+        <wsdl:operation name="updateDataByService">
+			<soap:operation soapAction="urn:updateDataByService"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+        <wsdl:operation name="deleteDataByService">
+			<soap:operation soapAction="urn:deleteDataByService"/>
+			<wsdl:input>
+				<soap:header message="uch:SimpleOAuthHeader" part="simpleOAuthHeader" use="literal"/>
+                <soap:header message="utih:TransactionInfoHeader" part="transactionInfoHeader" use="literal"/>                               
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ClientException">
+				<soap:fault name="ClientException" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ServerException">
+				<soap:fault name="ServerException" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>                              
+	</wsdl:binding>
+	<wsdl:service name="M2MSensorDataService">
+		<wsdl:port name="SensorData" binding="m2m_sdata_s1:SensorDataSOAPBinding">
+			<soap:address location="http://localhost/UNICA_SDP/M2M/Sensordata"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

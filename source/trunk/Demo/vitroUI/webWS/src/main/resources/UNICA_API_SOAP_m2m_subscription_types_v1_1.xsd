@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- October, 2010 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m2m_subs_s1t="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/subscription/v1/types" xmlns:uct="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" targetNamespace="http://www.telefonica.com/schemas/UNICA/SOAP/m2m/subscription/v1/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.telefonica.com/schemas/UNICA/SOAP/common/v1" schemaLocation="UNICA_API_SOAP_common_types_v1_0.xsd"/>
+	<!-- Business data -->
+	<xsd:simpleType name="EventKindType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Register"/>
+			<xsd:enumeration value="Observation"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SubscriptionType">
+		<xsd:sequence>
+			<xsd:element name="eventKind" type="m2m_subs_s1t:EventKindType" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="notifyURI" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="allowE2ENotifications" type="xsd:boolean" minOccurs="0" maxOccurs="1" default="false"/>
+			<xsd:element name="serviceLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="clientAppLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="subscriptionLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="xpath" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="timed" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="seconds" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="original" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="priority" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Operation types -->
+	<xsd:element name="subscribe">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="responseURI" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="subscription" type="m2m_subs_s1t:SubscriptionType" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="subscribeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="unsubscribe">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="responseURI" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="subscriptionLogicalName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="outgoingConnectionId" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="unsubscribeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="disconnect">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="responseURI" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="outgoingConnectionId" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="disconnectResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="result" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
