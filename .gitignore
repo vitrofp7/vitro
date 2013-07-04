@@ -9,12 +9,15 @@ source/trunk/Demo/vitro-gateway/vitro-gateway/.idea/*
 source/trunk/Demo/vitro-gateway/vitro-gateway/.project
 source/trunk/Demo/vitro-gateway/vitro-gateway/.classpath
 source/trunk/Demo/vitro-gateway/vitro-gateway/.settings/*
+source/trunk/Demo/vitro-gateway/vitro-gateway/logs/*
 source/trunk/Demo/vitro-gateway/vitro-gateway/target/*
+source/trunk/Demo/vitro-gateway/logs/*
 source/trunk/Demo/vitro-gateway/.idea/*
 source/trunk/Demo/vitro-gateway/.project
 source/trunk/Demo/vitro-gateway/.classpath
 source/trunk/Demo/vitro-gateway/.settings/*
 source/trunk/Demo/vitro-gateway/target/*
+source/trunk/Demo/logs/*
 source/trunk/Demo/vitroUI/.idea/*
 source/trunk/Demo/vitroUI/.project
 source/trunk/Demo/vitroUI/.classpath
