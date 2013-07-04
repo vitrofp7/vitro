@@ -1,0 +1,33 @@
+#ignore specific files
+
+# Use wildcards as well
+*.iml
+
+# Can also ignore all directories and files in a directory.
+source/trunk/Demo/VirtualSensor/.project
+source/trunk/Demo/VirtualSensor/.classpath
+source/trunk/Demo/VirtualSensor/.settings/*
+source/trunk/Demo/vitro-gateway/vitro-gateway/.idea/*
+source/trunk/Demo/vitro-gateway/vitro-gateway/.project
+source/trunk/Demo/vitro-gateway/vitro-gateway/.classpath
+source/trunk/Demo/vitro-gateway/vitro-gateway/.settings/*
+source/trunk/Demo/vitroUI/.idea/*
+source/trunk/Demo/vitroUI/.project
+source/trunk/Demo/vitroUI/.classpath
+source/trunk/Demo/vitroUI/.settings/*
+source/trunk/Demo/vitroUI/target/*
+source/trunk/Demo/vitroUI/webUI/.project
+source/trunk/Demo/vitroUI/webUI/.classpath
+source/trunk/Demo/vitroUI/webUI/.settings/*
+source/trunk/Demo/vitroUI/webUI/target/*
+source/trunk/Demo/vitroUI/vspEngine/.project
+source/trunk/Demo/vitroUI/vspEngine/.classpath
+source/trunk/Demo/vitroUI/vspEngine/.settings/*
+source/trunk/Demo/vitroUI/webWS/.project
+source/trunk/Demo/vitroUI/webWS/.classpath
+source/trunk/Demo/vitroUI/webWS/.settings/*
+source/trunk/Demo/vitroUI/webWS/.idea/*
+source/trunk/Demo/vitroUI/unicaAPI/.project
+source/trunk/Demo/vitroUI/unicaAPI/.classpath
+source/trunk/Demo/vitroUI/unicaAPI/.settings/*
+source/trunk/Demo/vitroUI/unicaAPI/.idea/*
