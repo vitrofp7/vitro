@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Class-Path: cxf-rt-frontend-jaxrs-2.6.0.jar cxf-api-2.6.0.jar woodstox
+ -core-asl-4.1.2.jar stax2-api-3.1.1.jar xmlschema-core-2.0.2.jar gero
+ nimo-javamail_1.4_spec-1.7.1.jar wsdl4j-1.6.2.jar cxf-rt-core-2.6.0.j
+ ar jaxb-impl-2.2.5.jar jsr311-api-1.1.1.jar cxf-rt-bindings-xml-2.6.0
+ .jar cxf-rt-transports-http-2.6.0.jar spring-context-3.1.0.RELEASE.ja
+ r spring-aop-3.1.0.RELEASE.jar aopalliance-1.0.jar spring-asm-3.1.0.R
+ ELEASE.jar spring-beans-3.1.0.RELEASE.jar spring-core-3.1.0.RELEASE.j
+ ar spring-expression-3.1.0.RELEASE.jar spring-web-3.1.0.RELEASE.jar j
+ unit-4.10.jar hamcrest-core-1.1.jar log4j-1.2.16.jar slf4j-api-1.6.4.
+ jar jcl-over-slf4j-1.6.4.jar jul-to-slf4j-1.6.4.jar slf4j-log4j12-1.6
+ .4.jar httpclient-4.1.3.jar httpcore-4.1.4.jar commons-codec-1.4.jar 
+ sos-v_1_0_0-schema-1.0.3.jar jaxb2-basics-runtime-0.6.0.jar gml-v_3_1
+ _1-schema-1.0.3.jar om-v_1_0_0-schema-1.0.3.jar swecommon-v_1_0_1-sch
+ ema-1.0.3.jar sensorml-v_1_0_1-schema-1.0.3.jar ic-v_2_0-schema-1.0.3
+ .jar ows-v_1_1_0-schema-1.0.3.jar activemq-core-5.5.1.jar geronimo-jm
+ s_1.1_spec-1.1.1.jar activeio-core-3.1.2.jar geronimo-j2ee-management
+ _1.1_spec-1.0.1.jar kahadb-5.5.1.jar activemq-protobuf-1.1.jar org.os
+ gi.core-4.1.0.jar commons-net-2.0.jar jasypt-1.7.jar org.ws4d.coap-1.
+ 0.0.jar org.zeromq.coap-1.0.0.jar json-simple-1.1.1.jar
+
