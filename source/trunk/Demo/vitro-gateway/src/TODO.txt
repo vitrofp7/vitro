@@ -1,0 +1,88 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2013 VITRO FP7 Consortium.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+# http://www.gnu.org/licenses/lgpl-3.0.html
+#
+# Contributors:
+#     Antoniou Thanasis
+#     Paolo Medagliani
+#     D. Davide Lamanna
+#     Panos Trakadas
+#     Andrea Kropp
+#     Kiriakos Georgouleas
+#     Panagiotis Karkazis
+#     David Ferrer Figueroa
+#     Francesco Ficarola
+#     Stefano Puglia
+#-------------------------------------------------------------------------------
+[][VGW][BUG] If resource discovery or query in network gets stuck then the PIPE (activeMQ) cannot be used for listening sending (but the thread for trust polling will continue to work, so )
+		WILL A TASK MANAGER FIX THIS?
+[][VGW][TEST] VGW a gateway should be able to communicate disabled nodes to the VSP! (leave this message support open, maybe we can implement it to show
+		online what happens when a node fails - is powered down, or sends continuously failed values or has not reponded for a long time, etc... )
+[][VGW][CODE][COAP] COAP ADAPTERS CLEANUP THE ARRAY LIST OF MESSAGE IDs (DTN and normal) AFTER SOME TIME (TO AVOID IT FILLING UP COMPLETELY!)
+[][VGW][CODE][BUGFIX] Clean up used Coap IDs vector and DTN message ID vector, to avoid clogging up. (Coap Adapters' code)
+[][VGW][CODE][CLEANUP] Unify COAP adapters, as much as possible to avoid redundancy in the code
+[][VGW][COAP] onConnectionFailed cases for CoAP. Could we exploit them to detect failed nodes?
+[][VGW][COAP][BUGFIX] HAI could get stuck if a node doesn't reply. Does the timeout not work? Has that code been scraped? To VERIFY!
+[][VGW][VSP][INVALID VALUES] Invalid values detection/filtering (eg temp <-20 Celsius or > 60 Celsius)
+[][VGW][INVALID VALUES] Filter out invalid values --> Mark nodes as disabled? ROGUE values. Auto detection of failed nodes
+[][VGW][Non-REPLYING NODES] Nodes who don't reply --> Mark as disabled?
+[][VGW][WILDCARDS] Wildcards support "Any node", "All nodes of gateway GW level" <- to be parsed from the VGW itself (not the VSP).
+                     - Support wildcards in node selection like "all nodes from gateway" (currently supported but could be improved -parsed at VGW side instead of VSP), "any node from gateway supporting capabilities x,y,z", etc
+[][!!!][VGW][EXPANSION] Task Scheduler for VGW
+		[][VGW][CODE] Task Scheduler. Priorities and spacing queries apart, ignoring queries of the same kind if others are pending in the QUEUE as well.
+		[][VGW][CODE] Scheduler: Task Priorities, Timed out tasks, Periodic Tasks and one-shot, (this could later enable asynch replies to queries, but it would need extra commands to be remotely stopped/started/removed)
+        [][CODE] Task manager in the VGW used both for incoming requests and internal processes. Also serving asynchronous responses to VSNs
+[][CODE][VGW][CONSIDER] Add timestamp of reply to response to a AggrQuery?
+[][VGW][CLEANUP][OPTIMIZATION][UBERDUST][COAP] Optimize Uberdust connector. Improve and add more Coap Interactions
+[][CODE][UBERDUST CONNECTOR] Better Handle timeouts for Uberdust connector
+[][CODE][UBERDUST CONNECTOR] Optimize code in the connector. Remove unneeded classes and methods, and code redundancy
+[][CODE][UBERDUST CONNECTOR] Better integrate coap support (alternative to http client requests?)
+[][CODE][UBERDUST CONNECTOR] Deal with Http requests not-timing out (eg. when uberdust server is down)
+[][CODE][UBERDUST CONNECTOR] uberdust should ignore nodes with stale values in some of their sensors
+[][CODE][UBERDUST CONNECTOR] Fix Debug offline mode for uberdust
+[][CODE][UBERDUST CONNECTOR] Integrate a "detection of failure" for Uberdust islands (full failure, or even node failure)
+[][VGW][HTTP-REST] CTI could get stuck if HTTP connection can't be established or is VERY slow. Need an alternative or a timeout here!
+			- TIMEOUT for CTI when uberdust is stuck (http client connection hangs the main thread)?
+[][INFO][TO BE UPDATED][TEST] CTI's new COAP service for UberDust
+[][INFO][VGW][VSP] VGW sends a confirm message for enabled/disabled lists as soon as it finishes the register (on demand). Not after it's init though, not on the 1rst register.
+			When VSP sends to VGW a message for requesting resources, the VSP will invalidate the status of all the sensors (known to the VSP) locally.
+[][VGW][DTN] Don't use DTN always in a DTN support island (need to use per case of VSN -according to whether requested or not - after the 1rst DTN requesting VSN)
+[][INFO][VGW][CONTINUATION] 	m1 m2 s3     m1 and s3 can't be both common between entries in the replacement Cache because: "Has already a replacement for this resource"
+						m4 m5 s6     m5 and s6 can't be both common between entries because: "replaces other for this resource"
+[][CODE][CONTINUATION] One node from a VSN could replace another node from the same VSN!
+                            If the replacement is used for another capability, it could offer the spare one to
+                            the failing node! Would that create conflict later in the replacing or querying of the WSI?
+                            PROBABLY, We would have to check again with the original requested nodes list to see when to replace a node and when not to.
+                            and also before the quering of the WSI, we would have to merge requests to the (replacement) node already in the original request list (so it has queries for itself already -other capability though).
+                            Another case: A node from another VSN could already be used for the offered resource. Can we re-use it for this VSN (possibly, but some resource management or use of some cache of values should take place).
+[][VGW][CONTINUATION] Select node from same VNS if available (would need to merge the new queries for this node, with the pre-existing/original ones, and split back/reconstruct based on the original requests vec)
+[][VGW][CONTINUATION] What if a node is used in another service with this capability? This needs Resource Usage Tracking (Registry)!
+[][VGW][DONE?] CONTINUE SERVICE WITH REMAINING NODES?
+[][VGW][COAP][CODE] coap client returns the possible ID for the message. Can we exploit that to change the ID if it's already in the array of sent ids?
+[][CODE][VGW][OPTIMIZE] Clean up-merge alter and main packages. Put resources maps centered (like it is now for ResourceAvailabilityService. Keep it there?
+			check if we can re-use the web interface/tests that WLAB was using for the VGW
+[][CODE][VGW][OPTIMIZE] Merge the common parts of the different connectors.
+[][!!!][RELEASE][PACKAGE] PACKAGE TO REDISTRIBUTE, COMMAND LINE CALLS / SWITCHES. INSTALLATION INSTRUCTIONS/PRE-REQUISITES/REQUIREMENTS.
+[][VGW][CONSIDER][CODE] Put the VGW module with the rest of the middleware project, to avoid duplication of classes?
+[][CONSIDER][CODE] Do we really need schema validation for XML queries/commands ?
+[][VGW][CONSIDER] Do the nodes check for a supporting resource before requesting an observation for it? (to skip unnecessary timeouts?)
+[][VGW][CONSIDER] Partial Support/Deployability Status when the request was AGGR for the whole gateway... Is it correct to state "PARTIAL" in this case?
+[][CODE][RESOURCE MANAGEMENT] Add a module to keep track of resource usages to active VSNs and assist the choices/selection in service deployment and service continuation.
+[][CODE][ADVANCED RULES and CONDITIONs evaluation] Support other kinds of thresholds and also time intervals.
+[][FUTURE][VGW] VGWs coordination/cooperation for caching values, replying to queries
+[][FUTURE][VGW] VGW: a cache of value responses to a query to respond to similar queries (other VSNs) or queries of the same VSN within a time window, without re-polling the nodes with Coap
+		OR re-poll only the nodes in the new query with non-cached-values
+[][FUTURE][VGW] Choosing between routing modes/setting up trees fo VSNs, /isolated communication s(if security enabled), setting up parametes for RPL...
+[][FUTURE][VGW] Support more advanced SOS registration messages. Support indicating actuating nodes. (now it was done by adding a number to their name (not an optimal way)
+[][FUTURE][VGW][CONTINUATION] Replacement nodes coming from other VGWs (eg overlapping VGWs).
+[][FUTURE][VGW] Add an extra internal service (task) for the Task Manager to check for alive nodes??? To update the enable nodes and synch with VSP ?
+			 OR:
+				Keep a cache with values from nodes (last value) that can be re-used by queries of the same VSN, if the frequency of polling is too high
+					or from similar queries (other VSNs). Need a way to indicate that the cache responded and not the node.
+					Need to activate/deactivate this cache!
+[][FUTURE][VGW][CONSIDER] Processor at VGW? Asynch reply support (publish/subscribe model), Web service support at VGW?
+[][FUTURE][VGW] Expand on the concept of INTERNAL resources/Supporting services (eg. like the trust coap messages)
+[][FUTURE][VGW][COAP][CONSIDER][CODE] Threading of CoAP messages?
+[][FUTURE][CODE] Support asynchronous replies
