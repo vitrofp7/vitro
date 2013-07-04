@@ -45,21 +45,17 @@
 [][CODE][UBERDUST CONNECTOR] Integrate a "detection of failure" for Uberdust islands (full failure, or even node failure)
 [][VGW][HTTP-REST] CTI could get stuck if HTTP connection can't be established or is VERY slow. Need an alternative or a timeout here!
 			- TIMEOUT for CTI when uberdust is stuck (http client connection hangs the main thread)?
-[][INFO][TO BE UPDATED][TEST] CTI's new COAP service for UberDust:
-        coap://uberdust.cti.gr:5683/.well-known/core
-        light zones as capabilities for actuator 0x42f
-        coap://uberdust.cti.gr:5683/urn:wisebed:ctitestbed:0x42f/urn:wisebed:node:capability:lz1
-        get status( works as ping too)  coap://grey.cti.gr:5683/lz3  . Post status. (from debug mode, set uri-host to addr (hex)). Coap 8 API?
+[][INFO][TO BE UPDATED][TEST] CTI's new COAP service for UberDust
 [][INFO][VGW][VSP] VGW sends a confirm message for enabled/disabled lists as soon as it finishes the register (on demand). Not after it's init though, not on the 1rst register.
 			When VSP sends to VGW a message for requesting resources, the VSP will invalidate the status of all the sensors (known to the VSP) locally.
 [][VGW][DTN] Don't use DTN always in a DTN support island (need to use per case of VSN -according to whether requested or not - after the 1rst DTN requesting VSN)
-[][INFO][VGW][CONTINUTATION] 	m1 m2 s3     m1 and s3 can't be both common between entries in the replcmen Cache because: "Has already a replacement for this resource"
+[][INFO][VGW][CONTINUATION] 	m1 m2 s3     m1 and s3 can't be both common between entries in the replacement Cache because: "Has already a replacement for this resource"
 						m4 m5 s6     m5 and s6 can't be both common between entries because: "replaces other for this resource"
 [][CODE][CONTINUATION] One node from a VSN could replace another node from the same VSN!
                             If the replacement is used for another capability, it could offer the spare one to
                             the failing node! Would that create conflict later in the replacing or querying of the WSI?
                             PROBABLY, We would have to check again with the original requested nodes list to see when to replace a node and when not to.
-                            and also before the quering of the WSI, we would have to merge requests to the (replacement) node already in the orginal request list (so it has queries for itself already -other capability though).
+                            and also before the quering of the WSI, we would have to merge requests to the (replacement) node already in the original request list (so it has queries for itself already -other capability though).
                             Another case: A node from another VSN could already be used for the offered resource. Can we re-use it for this VSN (possibly, but some resource management or use of some cache of values should take place).
 [][VGW][CONTINUATION] Select node from same VNS if available (would need to merge the new queries for this node, with the pre-existing/original ones, and split back/reconstruct based on the original requests vec)
 [][VGW][CONTINUATION] What if a node is used in another service with this capability? This needs Resource Usage Tracking (Registry)!
@@ -71,13 +67,13 @@
 [][!!!][RELEASE][PACKAGE] PACKAGE TO REDISTRIBUTE, COMMAND LINE CALLS / SWITCHES. INSTALLATION INSTRUCTIONS/PRE-REQUISITES/REQUIREMENTS.
 [][VGW][CONSIDER][CODE] Put the VGW module with the rest of the middleware project, to avoid duplication of classes?
 [][CONSIDER][CODE] Do we really need schema validation for XML queries/commands ?
-[][VGW][CONSIDER] Do the nodes check for a supporting resource before requesting an observation for it? (to skip unecessary timeouts?)
+[][VGW][CONSIDER] Do the nodes check for a supporting resource before requesting an observation for it? (to skip unnecessary timeouts?)
 [][VGW][CONSIDER] Partial Support/Deployability Status when the request was AGGR for the whole gateway... Is it correct to state "PARTIAL" in this case?
 [][CODE][RESOURCE MANAGEMENT] Add a module to keep track of resource usages to active VSNs and assist the choices/selection in service deployment and service continuation.
 [][CODE][ADVANCED RULES and CONDITIONs evaluation] Support other kinds of thresholds and also time intervals.
 [][FUTURE][VGW] VGWs coordination/cooperation for caching values, replying to queries
 [][FUTURE][VGW] VGW: a cache of value responses to a query to respond to similar queries (other VSNs) or queries of the same VSN within a time window, without re-polling the nodes with Coap
-		OR repoll only the nodes in the new query with non-cached-values
+		OR re-poll only the nodes in the new query with non-cached-values
 [][FUTURE][VGW] Choosing between routing modes/setting up trees fo VSNs, /isolated communication s(if security enabled), setting up parametes for RPL...
 [][FUTURE][VGW] Support more advanced SOS registration messages. Support indicating actuating nodes. (now it was done by adding a number to their name (not an optimal way)
 [][FUTURE][VGW][CONTINUATION] Replacement nodes coming from other VGWs (eg overlapping VGWs).
@@ -85,7 +81,7 @@
 			 OR:
 				Keep a cache with values from nodes (last value) that can be re-used by queries of the same VSN, if the frequency of polling is too high
 					or from similar queries (other VSNs). Need a way to indicate that the cache responded and not the node.
-					Need to activate/deactive this cache!
+					Need to activate/deactivate this cache!
 [][FUTURE][VGW][CONSIDER] Processor at VGW? Asynch reply support (publish/subscribe model), Web service support at VGW?
 [][FUTURE][VGW] Expand on the concept of INTERNAL resources/Supporting services (eg. like the trust coap messages)
 [][FUTURE][VGW][COAP][CONSIDER][CODE] Threading of CoAP messages?
