@@ -1,4 +1,27 @@
-     var perlineColorPicker = 9;
+     /*
+ * #--------------------------------------------------------------------------
+ * # Copyright (c) 2013 VITRO FP7 Consortium.
+ * # All rights reserved. This program and the accompanying materials
+ * # are made available under the terms of the GNU Lesser Public License v3.0 which accompanies this distribution, and is available at
+ * # http://www.gnu.org/licenses/lgpl-3.0.html
+ * #
+ * # Contributors:
+ * #     Antoniou Thanasis (Research Academic Computer Technology Institute)
+ * #     Paolo Medagliani (Thales Communications & Security)
+ * #     D. Davide Lamanna (WLAB SRL)
+ * #     Alessandro Leoni (WLAB SRL)
+ * #     Francesco Ficarola (WLAB SRL)
+ * #     Stefano Puglia (WLAB SRL)
+ * #     Panos Trakadas (Technological Educational Institute of Chalkida)
+ * #     Panagiotis Karkazis (Technological Educational Institute of Chalkida)
+ * #     Andrea Kropp (Selex ES)
+ * #     Kiriakos Georgouleas (Hellenic Aerospace Industry)
+ * #     David Ferrer Figueroa (Telefonica InvestigaciÃ³n y Desarrollo S.A.)
+ * #
+ * #--------------------------------------------------------------------------
+ */
+
+var perlineColorPicker = 9;
      var divSetColorPicker = false;
      var curIdColorPicker;
      var colorLevelsColorPicker = Array('0', '3', '6', '9', 'C', 'F');
@@ -130,7 +153,7 @@
               if (i % perlineColorPicker == 0) { tableCode += '<tr>'; }
               tableCode += '<td bgcolor="#000000"><a style="outline: 1px solid #000000; color: ' 
               	  + colors[i] + '; background: ' + colors[i] + ';font-size: 10px;" title="' 
-              	  + colors[i] + '" href="javascript:setColorColorPicker(\'' + colors[i] + '\');">   </a></td>';
+              	  + colors[i] + '" href="javascript:setColorColorPicker(\'' + colors[i] + '\');">ï¿½ï¿½ï¿½</a></td>';
               if (i % perlineColorPicker == perlineColorPicker - 1) { tableCode += '</tr>'; }
          }
          if (i % perlineColorPicker != 0) { tableCode += '</tr>'; }

@@ -7,16 +7,18 @@
  * # http://www.gnu.org/licenses/lgpl-3.0.html
  * #
  * # Contributors:
- * #     Antoniou Thanasis
- * #     Paolo Medagliani
- * #     D. Davide Lamanna
- * #     Panos Trakadas
- * #     Andrea Kropp
- * #     Kiriakos Georgouleas
- * #     Panagiotis Karkazis
- * #     David Ferrer Figueroa
- * #     Francesco Ficarola
- * #     Stefano Puglia
+ * #     Antoniou Thanasis (Research Academic Computer Technology Institute)
+ * #     Paolo Medagliani (Thales Communications & Security)
+ * #     D. Davide Lamanna (WLAB SRL)
+ * #     Alessandro Leoni (WLAB SRL)
+ * #     Francesco Ficarola (WLAB SRL)
+ * #     Stefano Puglia (WLAB SRL)
+ * #     Panos Trakadas (Technological Educational Institute of Chalkida)
+ * #     Panagiotis Karkazis (Technological Educational Institute of Chalkida)
+ * #     Andrea Kropp (Selex ES)
+ * #     Kiriakos Georgouleas (Hellenic Aerospace Industry)
+ * #     David Ferrer Figueroa (Telefonica Investigación y Desarrollo S.A.)
+ * #
  * #--------------------------------------------------------------------------
  */
 
